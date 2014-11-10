@@ -1,0 +1,477 @@
+ctpp2 (2.8.3) unstable; urgency=low
+
+  * Returned curly brakets as an alias for square ones.
+  * Fixed error reporting.
+
+ -- Alexander Pankov <pianist@usrsrc.ru>  Sat, 10 Nov 2012 14:23:00 +0400
+
+ctpp2 (2.8.2) unstable; urgency=low
+
+  * Removed TMPL_loop. Added TMPL_foreach's attributes for iterator.
+  * TMPL_foreach works with HASH.
+  * Fixed TMPL_call. It works with variables.
+  * Removed the attribute 'map' of TMPL_include.
+  * Added CONTEXT(), LIST(). Removed NUMERAL(), ARRAY_ELEMENT(),
+    HASH_ELEMENT().
+  * Renamed JSESCAPE() as JSONESCAPE(). Refactored the code.
+  * Added new documentation of the CT++ template language.
+  * Added the operator <TMPL_break>.
+  * Small fixes.
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 13 Jul 2012 14:28:33 +0400
+
+ctpp2 (2.8.1) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 29 May 2012 19:00:00 +0400
+
+ctpp2 (2.8.0) unstable; urgency=low
+
+  * Improved access to arrays and hashes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 28 Dec 2011 17:30:00 +0400
+
+ctpp2 (2.7.6) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 28 Dec 2011 17:00:00 +0400
+
+ctpp2 (2.7.5) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 23 Dec 2011 15:20:00 +0400
+
+ctpp2 (2.7.4) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 19 Dec 2011 17:22:00 +0400
+
+ctpp2 (2.7.3) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 14 Nov 2011 17:50:00 +0400
+
+ctpp2 (2.7.2) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed,  5 Oct 2011 16:15:00 +0400
+
+ctpp2 (2.7.1) unstable; urgency=low
+
+  *  Production-ready version of CTPP2 2.7.X
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  8 Jul 2011 20:00:00 +0400
+
+ctpp2 (2.7.0) unstable; urgency=low
+
+  * New version of CTPP: 2.7.0
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Thu, 16 Jun 2011 17:48:00 +0400
+
+ctpp2 (2.6.15) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 16 May 2011 16:30:00 +0400
+
+ctpp2 (2.6.14) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Thu, 28 Apr 2011 17:55:00 +0400
+
+ctpp2 (2.6.13) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  1 Apr 2011 19:24:00 +0400
+
+ctpp2 (2.6.12) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 15 Mar 2011 14:15:00 +0400
+
+ctpp2 (2.6.11) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 28 Feb 2011 20:00:00 +0400
+
+ctpp2 (2.6.10) unstable; urgency=low
+
+  * Bug fixes, new functions: GET_TYPE and HOSTNAME
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 11 Feb 2011 19:49:00 +0400
+
+ctpp2 (2.6.7) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon,  1 Nov 2010 17:28:00 +0400
+
+ctpp2 (2.6.6) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue,  5 Oct 2010 16:10:00 +0400
+
+ctpp2 (2.6.5) unstable; urgency=low
+
+  * Fixes in CTPP2 dialect compiler
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 22 Sep 2010 16:10:00 +0400
+
+ctpp2 (2.6.4) unstable; urgency=low
+
+  * Improvements in SortArray method
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 20 Sep 2010 17:41:00 +0400
+
+ctpp2 (2.6.3) unstable; urgency=low
+
+  * Fixes in TMPL_foreach iterators (thanks to Kirichenko Sergey <kirichenko@post.km.ru>)
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 27 Jul 2010 18:55:00 +0400
+
+ctpp2 (2.6.2) unstable; urgency=low
+
+  * New methods for CDT class: Swap & SortArray
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 20 Jul 2010 19:41:00 +0400
+
+ctpp2 (2.6.1) unstable; urgency=low
+
+  * New minor version. See CHANGES.
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 15 Jun 2010 18:54:00 +0400
+
+ctpp2 (2.5.19) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 24 May 2010 16:54:00 +0400
+
+ctpp2 (2.5.17) unstable; urgency=low
+
+  * New function: SPRINTF
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  2 Apr 2010 21:55:00 +0400
+
+ctpp2 (2.5.15) unstable; urgency=low
+
+  * Fixes in function NUM_FORMAT
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 30 Dec 2009 15:06:00 +0400
+
+ctpp2 (2.5.14) unstable; urgency=low
+
+  * New method for class CDT: Erase. Erase element from hash by specified key name
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  4 Dec 2009 15:27:00 +0400
+
+ctpp2 (2.5.13) unstable; urgency=low
+
+  * Fixes in Base64Encode function
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 24 Nov 2009 15:05:00 +0400
+
+ctpp2 (2.5.12) unstable; urgency=low
+
+  * New output data collector, port to CygWin
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Sun, 18 Oct 2009 21:10:00 +0400
+
+ctpp2 (2.5.11) unstable; urgency=low
+
+  * Fixes in virtual machine: CMP (STACK/STACK)
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Thu, 27 Aug 2009 17:08:00 +0400
+
+ctpp2 (2.5.10) unstable; urgency=low
+
+  * New functions: LIST_ELEMENT & ARRAY_ELEMENT. Fixes in JSON parser.
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 18 Aug 2009 17:07:00 +0400
+
+ctpp2 (2.5.9) unstable; urgency=low
+
+  * Fixes in <TMPL_foreach .. > <TMPL_include "file"> </TMPL_foreach>
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Thu, 13 Aug 2009 18:38:00 +0400
+
+ctpp2 (2.5.8) unstable; urgency=low
+
+  * Completely rewrite code of JSON parser
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed,  5 Aug 2009 20:08:00 +0400
+
+ctpp2 (2.5.7) unstable; urgency=low
+
+  * New function: NUMERAL, fixes in TRUNCATE & MB_TRUNCATE functions
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 24 Jun 2009 14:56:00 +0400
+
+ctpp2 (2.5.6) unstable; urgency=low
+
+  * Fixes in JSESCAPE function
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue,  9 Jun 2009 21:20:00 +0400
+
+ctpp2 (2.5.5) unstable; urgency=low
+
+  * Fixes in math. expressions inside functions: <TMPL_var FOO(bar + baz)>
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue,  2 Jun 2009 16:50:00 +0400
+
+ctpp2 (2.5.4) unstable; urgency=low
+
+  * Avoid a lot of warnings on gcc 4.3+, #include <...> changed to #include "..." for all files of project
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 20 May 2009 18:00:00 +0400
+
+ctpp2 (2.5.3) unstable; urgency=low
+
+  * Removed inline methods of exception classes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 12 May 2009 15:37:00 +0400
+
+ctpp2 (2.5.2) unstable; urgency=low
+
+  * Bug fixes in branches inside foreach operator
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 20 Apr 2009 19:19:00 +0400
+
+ctpp2 (2.5.1) unstable; urgency=low
+
+  * Bug fixes, documentation
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 17 Apr 2009 19:00:00 +0400
+
+ctpp2 (2.5.0) unstable; urgency=low
+
+  * New operator: <TMPL_foreach; Gettext function improvements
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Thu, 16 Apr 2009 15:55:00 +0400
+
+ctpp2 (2.4.10) unstable; urgency=low
+
+  * New function: WMLESCAPE
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed,  8 Apr 2009 16:34:00 +0400
+
+ctpp2 (2.4.9) unstable; urgency=low
+
+  * New classes: SimpleVM, SimpleCompiler
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  2 Apr 2009 20:15:00 +0400
+
+ctpp2 (2.4.8) unstable; urgency=low
+
+  * New functions: CONCAT, SUBSTR, TRUNCATE, MB_SIZE, MB_TRUNCATE, MB_SUBSTR
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 18 Mar 2009 22:20:00 +0300
+
+ctpp2 (2.4.7) unstable; urgency=low
+
+  * New flags for iconv converter
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 16 Mar 2009 15:10:00 +0300
+
+ctpp2 (2.4.6) unstable; urgency=low
+
+  * New output data collector with charset recoding, new functions
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Sat,  7 Mar 2009 14:00:00 +0300
+
+ctpp2 (2.4.5) unstable; urgency=low
+
+  * Port to MacOS, new functions: RANDOM and LOG
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed,  4 Mar 2009 14:00:00 +0300
+
+ctpp2 (2.4.4) unstable; urgency=low
+
+  * New functions: HMAC_MD5, URIESCAPE. Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Sat, 15 Feb 2009 18:00:00 +0300
+
+ctpp2 (2.4.3) unstable; urgency=low
+
+  * Port to Win32 platform
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 10 Feb 2009 18:05:00 +0300
+
+ctpp2 (2.4.2) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Sun, 25 Jan 2009 12:00:00 +0300
+
+ctpp2 (2.4.1) unstable; urgency=low
+
+  * New function: JSON, code cleanup & docs
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Sun, 18 Jan 2009 16:00:00 +0300
+
+ctpp2 (2.4.0) unstable; urgency=low
+
+  * <TMPL_call & <TMPL_break operators
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 14 Jan 2009 14:02:00 +0300
+
+ctpp2 (2.3.11) unstable; urgency=low
+
+  * JSON improvements
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  7 Nov 2008 13:00:00 +0300
+
+ctpp2 (2.3.10) unstable; urgency=low
+
+  * Make Valgrind happy & port to ALT Linux
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 16 Sep 2008 22:00:00 +0300
+
+ctpp2 (2.3.9) unstable; urgency=low
+
+  * Improvements in parsing Non-HTML templates
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 12 Sep 2008 11:38:00 +0300
+
+ctpp2 (2.3.8) unstable; urgency=low
+
+  * Port on SunOs 5.10 i386 and amd64
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  5 Sep 2008 10:27:00 +0300
+
+ctpp2 (2.3.7) unstable; urgency=low
+
+  * Nested loops from various data sources, bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue,  2 Sep 2008 17:25:00 +0300
+
+ctpp2 (2.3.6) unstable; urgency=low
+
+  * <TMPL_loop accept now contextual variable __CONTENT__ as argument
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 11 Aug 2008 17:22:00 +0300
+
+ctpp2 (2.3.5) unstable; urgency=low
+
+  * New input data formats of CAST and DATE_FORMAT functions
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Thu,  7 Aug 2008 15:44:00 +0300
+
+ctpp2 (2.3.4) unstable; urgency=low
+
+  * Debian Lenny bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 11 Jul 2008 18:00:00 +0300
+
+ctpp2 (2.3.3) unstable; urgency=low
+
+  * Debug subsystem improvements
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 24 Jun 2008 12:00:00 +0300
+
+ctpp2 (2.3.2) unstable; urgency=low
+
+  * New methods of class CDT
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 18 Jun 2008 14:20:00 +0300
+
+ctpp2 (2.3.1) unstable; urgency=low
+
+  * More information about errors in compiler, JSON parser improvements
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue,  3 Jun 2008 18:30:00 +0300
+
+ctpp2 (2.3.0) unstable; urgency=low
+
+  * Bug fixes; new ctpp2 debug subsystem
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 21 May 2008 18:30:00 +0300
+
+ctpp2 (2.2.3) unstable; urgency=low
+
+  * Bug fixes; new function: NUM_FORMAT
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 14 May 2008 17:10:00 +0300
+
+ctpp2 (2.2.2) unstable; urgency=low
+
+  * Bug fixes only
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 28 Apr 2008 20:21:00 +0300
+
+ctpp2 (2.2.1) unstable; urgency=low
+
+  * New function: ARRAY_SIZE
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 23 Apr 2008 18:29:00 +0300
+
+ctpp2 (2.2.0) unstable; urgency=low
+
+  * Bug fixes, crossplatform code support
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 18 Apr 2008 17:00:00 +0300
+
+ctpp2 (2.1.2) unstable; urgency=low
+
+  * Inverse variable order in translation map in <TMPL_include ...
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 28 Mar 2008 12:40:00 +0300
+
+ctpp2 (2.1.1) unstable; urgency=low
+
+  * Translation map in <TMPL_include ...
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Wed, 19 Mar 2008 18:15:00 +0300
+
+ctpp2 (2.1.0) unstable; urgency=low
+
+  * Math. operations, various optimizations, bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 14 Mar 2008 14:00:00 +0300
+
+ctpp2 (2.0.5) unstable; urgency=low
+
+  * Namespaces in variable names, bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon,  3 Mar 2008 18:55:00 +0300
+
+ctpp2 (2.0.4) unstable; urgency=low
+
+  * New contextual variable: __COUNTER__, small bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon, 18 Feb 2008 15:32:00 +0300
+
+ctpp2 (2.0.3) unstable; urgency=low
+
+  * New function: iconv
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri, 15 Feb 2008 16:00:00 +0300
+
+ctpp2 (2.0.2) unstable; urgency=low
+
+  * Bug fixes, new functions
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Fri,  8 Feb 2008 14:00:00 +0300
+
+ctpp2 (2.0.1) unstable; urgency=low
+
+  * Bug fixes
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Mon,  4 Feb 2008 13:51:00 +0300
+
+ctpp2 (2.0.0) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Andrei V. Shetuhin <reki@reki.ru>  Tue, 22 Jan 2008 16:30:00 +0300

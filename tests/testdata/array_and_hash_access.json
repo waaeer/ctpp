@@ -1,0 +1,20 @@
+{
+    'zero': 0,
+    'zeros': [ { 'z': 0 } ],
+    'bigloop': [ { 'foo': 'bar', 'out': 'spam', 'flag': '1' },
+                 { 'foo': 'baz', 'out': 'nospam' }],
+    'loop': [ { 'loop': [1] } ],
+    'num': 3,
+    'str': 'foo',
+    'hash': { 'key': 'hash_key_value', 'foo': 'hash_foo_value', 'bar': 4 },
+    'arr': [ 1001, 1002, 1003, 1004 ],
+    'arrs': [ [ 0, 3001 ], [ 0, 3002 ], [ 0, 3003 ], [ 0, 3004 ] ],
+    'big': [ { 'key': 500 }, { 'key': 600 }, { 'key': 700 } ],
+    'baz': [ {}, {}, {}, { 'key': [ {}, { 'foo': 2001 }] } ],
+    'big_arr': [
+        [ { 'key': '123' }, { 'key': '456' }, { 'key': '789' } ],
+        [ { 'key': 'ABC' }, { 'key': 'CBA' }, { 'key': '987' } ],
+        [ { 'key': '654' }, { 'key': '321' }, { 'key': '000' } ] ],
+    'small_arr': [ [ 0 ] ]
+}
+

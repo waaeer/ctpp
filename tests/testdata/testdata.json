@@ -1,0 +1,62 @@
+{
+	// One-line comment #1
+	// One-line comment #2
+	// One-line comment #3
+
+	/*
+	 * Multiline comment
+	 */
+
+	// Integer values
+	"int"     : 123,
+	"neg_int" : -123,
+
+	// IEEE 788 floating point value
+	"float"      : 123.456,
+	"neg_float"  : -123.456,
+
+	// String
+	"string" : "Hello, World!",
+
+	// String + integer
+	"string_int"       : "123",
+	"neg_string_int"   : "-123",
+
+	// String + IEEE 788
+	"string_float"     : "123.456",
+	"neg_string_float" : "-123.456",
+
+	// Array of integer
+	"array_int" : [1, 2, 3, 4],
+
+	// Hash
+	"hash" : { "one" : 1, "two" : 2, "three" : 3 },
+
+	//
+	"string2" : { "to" : { "escape" : "<b>test</b> \"test\" $test$" } },
+
+	'dic': { 'arr': [ 0, 1, 2, 3], 'val' : 'ind' },
+	'ind' : 2,
+
+    'n1' : 1,
+    'n2' : 2,
+    'n5' : 5,
+
+    'funcs': [ "test1", "test2", "test3" ],
+    'func': "test",
+
+    "data" : {
+                    "name" : "test",
+                    "data" : {
+                                    "name" : "test"
+                    },
+                    "edit_card_form": {
+                        "fields": {"field1": "name"}
+                    }
+    },
+    "items" : [
+        {"id":1,"name":"Item 1",
+            "subitems":[{"id":11,"name":"Subitem 1.1"}, {"id":12,"name":"Subitem 1.2"},{"id":13,"name":"Subitem 1.3"} ] }
+    ]
+}
+

@@ -1,0 +1,18 @@
+// Start
+
+_: <TMPL_var _("Unknown message")>
+GETTEXT: <TMPL_var GETTEXT("Unknown message")>
+_: <TMPL_var _("Test message")>
+GETTEXT: <TMPL_var GETTEXT("Test message")>
+_ n1: <TMPL_var _("%d file", "%d files", n1)>
+_ n2: <TMPL_var _("%d file", "%d files", n2)>
+_ n5: <TMPL_var _("%d file", "%d files", n5)>
+GETTEXT n1: <TMPL_var GETTEXT("%d file", "%d files", n1)>
+GETTEXT n2: <TMPL_var GETTEXT("%d file", "%d files", n2)>
+GETTEXT n5: <TMPL_var GETTEXT("%d file", "%d files", n5)>
+_ n1: <TMPL_var _("unknown singular message", "unknown plural message", n1)>
+_ n2: <TMPL_var _("unknown singular message", "unknown plural message", n2)>
+GETTEXT n1: <TMPL_var GETTEXT("unknown singular message", "unknown plural message", n1)>
+GETTEXT n2: <TMPL_var GETTEXT("unknown singular message", "unknown plural message", n2)>
+
+// End.

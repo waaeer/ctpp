@@ -1,0 +1,22 @@
+1. <TMPL_var num>
+2. <TMPL_var str>
+3. <TMPL_var hash.key>
+3a. <TMPL_var hash{"key"}>
+4. <TMPL_var hash [ str ]>
+5. <TMPL_var arr [ 1 ]>
+6. <TMPL_var arr [ num ]>
+7. <TMPL_var arr [ MAX(1, 3) ]>
+8. <TMPL_var hash [ CONCAT('k', 'ey') ]>
+9. <TMPL_var (hash.bar + arr [ 1 ])>
+A. <TMPL_var baz [ num ] . key [ 1 ] [ str ] >
+B. <TMPL_foreach arr as a><TMPL_var a>|</TMPL_foreach>
+C. <TMPL_foreach arrs as aa><TMPL_var aa[1]>|</TMPL_foreach>
+D. <TMPL_foreach big as b><TMPL_var b.key>|</TMPL_foreach>
+E. <TMPL_foreach big as b><TMPL_var b.key>|</TMPL_foreach>
+F. <TMPL_foreach big as b><TMPL_foreach arr as a><TMPL_var b.key>|</TMPL_foreach></TMPL_foreach>
+G. <TMPL_foreach small_arr as sa><TMPL_foreach sa as a><TMPL_var a></TMPL_foreach></TMPL_foreach>
+H. <TMPL_foreach big_arr as ba><TMPL_foreach ba as a><TMPL_var a.key></TMPL_foreach></TMPL_foreach>
+I. <TMPL_foreach loop as sub><TMPL_foreach sub.loop as subloop><TMPL_var subloop></TMPL_foreach></TMPL_foreach>
+J. <TMPL_foreach bigloop AS bl><TMPL_if DEFINED(bl.flag)><TMPL_var bl.foo>=<TMPL_include "array_and_hash_access_incl.tmpl"></TMPL_if></TMPL_foreach><TMPL_foreach bigloop AS bl><TMPL_unless DEFINED(bl.flag)><TMPL_var bl.foo></TMPL_unless></TMPL_foreach>
+K. <TMPL_var zero>
+L. <TMPL_foreach zeros as zero><TMPL_var zero.z></TMPL_foreach>

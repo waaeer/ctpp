@@ -1,0 +1,76 @@
+.\"-
+.\" Copyright (c) 2004 - 2010 CTPP Team
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 4. Neither the name of the CTPP Team nor the names of its contributors
+.\"    may be used to endorse or promote products derived from this software
+.\"    without specific prior written permission.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.Dd Jun 15, 2010
+.Dt CTPP2VM 1 1
+.Os "CTPP Dev. Team"
+.Sh NAME
+.Nm ctpp2vm
+.Nd CTPP virtual machine
+.Sh SYNOPSIS
+.Nm
+.Ar bytecode.ct2
+.Op Ar data.json
+.Op Ar translation.mo | 0
+.Op Ar limit of steps
+.Sh DESCRIPTION
+.Nm
+executes bytecode file
+.Ar bytecode.ct2
+and prints result to standard output.
+.Pp
+.Ar data.json
+,
+.Ar translation.mo
+and
+.Ar limit of steps
+are optional parameters.
+.Pp
+Use 0 instead
+.Ar translation.mo
+for ignoring gettext binary file.
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr ctpp2c 1 ,
+.Xr ctpp2i 1 ,
+.Xr ctpp2json 1 ,
+.Xr ctpp2-config 1 ,
+.Sh HISTORY
+An
+.Nm
+command appeared in CTPP 2.0.0.
+.Sh AUTHOR
+Written by Andrei V. Shetuhin <reki@reki.ru>
+.Sh "REPORTING BUGS"
+Report bugs to <reki@reki.ru>.
+.Sh WEBSITE
+http://ctpp.havoc.ru/en/ - in English
+
+http://ctpp.havoc.ru/    - for Russian speakers
+.Sh COPYRIGHT
+Copyright \(co 2004 \- 2010 CTPP Dev. Team.

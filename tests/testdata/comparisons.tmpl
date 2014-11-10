@@ -1,0 +1,53 @@
+// Start
+
+// Integer
+ 123 <  123          = <TMPL_if (int < 123)> OK <TMPL_else> NO </TMPL_if>
+ 123 >  123          = <TMPL_if (int > 123)> OK <TMPL_else> NO </TMPL_if>
+ 123 == 123          = <TMPL_if (int == 123)> OK <TMPL_else> NO </TMPL_if>
+ 123 != 123          = <TMPL_if (int != 123)> OK <TMPL_else> NO </TMPL_if>
+ 123 <= 123          = <TMPL_if (int <= 123)> OK <TMPL_else> NO </TMPL_if>
+ 123 >= 123          = <TMPL_if (int >= 123)> OK <TMPL_else> NO </TMPL_if>
+
+ 123 <  123.456      = <TMPL_if (int < 123.456)> OK <TMPL_else> NO </TMPL_if>
+ 123 >  123.456      = <TMPL_if (int > 123.456)> OK <TMPL_else> NO </TMPL_if>
+ 123 == 123.456      = <TMPL_if (int == 123.456)> OK <TMPL_else> NO </TMPL_if>
+ 123 != 123.456      = <TMPL_if (int != 123.456)> OK <TMPL_else> NO </TMPL_if>
+ 123 <= 123.456      = <TMPL_if (int <= 123.456)> OK <TMPL_else> NO </TMPL_if>
+ 123 >= 123.456      = <TMPL_if (int >= 123.456)> OK <TMPL_else> NO </TMPL_if>
+
+ 123.456 <  123.456      = <TMPL_if (int <  int)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 >  123.456      = <TMPL_if (int >  int)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 == 123.456      = <TMPL_if (int == int)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 != 123.456      = <TMPL_if (int != int)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 <= 123.456      = <TMPL_if (int <= int)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 >= 123.456      = <TMPL_if (int >= int)> OK <TMPL_else> NO </TMPL_if>
+
+ 123.456 <  123.456      = <TMPL_if (float <  float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 >  123.456      = <TMPL_if (float >  float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 == 123.456      = <TMPL_if (float == float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 != 123.456      = <TMPL_if (float != float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 <= 123.456      = <TMPL_if (float <= float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 >= 123.456      = <TMPL_if (float >= float)> OK <TMPL_else> NO </TMPL_if>
+
+ 123.456 <  123.456      = <TMPL_if (float <  string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 >  123.456      = <TMPL_if (float >  string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 == 123.456      = <TMPL_if (float == string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 != 123.456      = <TMPL_if (float != string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 <= 123.456      = <TMPL_if (float <= string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123.456 >= 123.456      = <TMPL_if (float >= string_float)> OK <TMPL_else> NO </TMPL_if>
+
+ 123     <  123.456      = <TMPL_if (string_int <  string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     >  123.456      = <TMPL_if (string_int >  string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     == 123.456      = <TMPL_if (string_int == string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     != 123.456      = <TMPL_if (string_int != string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     <= 123.456      = <TMPL_if (string_int <= string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     >= 123.456      = <TMPL_if (string_int >= string_float)> OK <TMPL_else> NO </TMPL_if>
+
+ 123     LT 123.456      = <TMPL_if (string_int LT string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     GT 123.456      = <TMPL_if (string_int GT string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     EQ 123.456      = <TMPL_if (string_int EQ string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     NE 123.456      = <TMPL_if (string_int NE string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     LE 123.456      = <TMPL_if (string_int LE string_float)> OK <TMPL_else> NO </TMPL_if>
+ 123     GE 123.456      = <TMPL_if (string_int GE string_float)> OK <TMPL_else> NO </TMPL_if>
+
+// End.

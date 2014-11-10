@@ -1,0 +1,142 @@
+// Start
+
+// +
+// Integer
+ 123 + 123               = <TMPL_var (int + 123)>
+-123 + 123               = <TMPL_var (neg_int + 123)>
+ 123(s) + 123            = <TMPL_var (string_int + 123)>
+
+ 123 + 123               = <TMPL_var (int + int)>
+-123 + 123               = <TMPL_var (neg_int + int)>
+-123(s) + 123(s)         = <TMPL_var (neg_string_int + string_int)>
+
+// IEEE 754
+ 123.456 + 123.456       = <TMPL_var (float + 123.456)>
+ 123.456(s) + 123.456    = <TMPL_var (string_float + 123.456)>
+
+-123.456 + 123.456       = <TMPL_var (neg_float + 123.456)>
+-123.456(s) + 123.456    = <TMPL_var (neg_string_float + 123.456)>
+
+ 123.456 + 123.456       = <TMPL_var (float + float)>
+-123.456 + 123.456       = <TMPL_var (neg_float + float)>
+-123.456(s) + 123.456(s) = <TMPL_var (neg_string_float + string_float)>
+
+
+// Integer & IEEE 754
+ 123.456 + 123        = <TMPL_var (float + int)>
+-123.456 + 123        = <TMPL_var (neg_float + int)>
+ 123.456(s) + 123     = <TMPL_var (string_float + int)>
+
+ 123     + 123.456    = <TMPL_var (int + float)>
+ 123     + -123.456   = <TMPL_var (int + neg_float)>
+ 123     + 123.456    = <TMPL_var (string_int + string_float)>
+
+// -
+// Integer
+ 123 - 123            = <TMPL_var (int - 123)>
+-123 - 123            = <TMPL_var (neg_int - 123)>
+
+ 123 - 123            = <TMPL_var (int - int)>
+-123 - 123            = <TMPL_var (neg_int - int)>
+
+// IEEE 754
+ 123.456 - 123.456    = <TMPL_var (float - 123.456)>
+-123.456 - 123.456    = <TMPL_var (neg_float - 123.456)>
+ 123.456 - 123.456    = <TMPL_var (float - float)>
+-123.456 - 123.456    = <TMPL_var (neg_float - float)>
+
+// Integer & IEEE 754
+ 123.456 - 123        = <TMPL_var (float - int)>
+-123.456 - 123        = <TMPL_var (neg_float - int)>
+ 123     - 123.456    = <TMPL_var (int - float)>
+ 123     - -123.456   = <TMPL_var (int - neg_float)>
+
+// *
+// Integer
+ 123 * 123            = <TMPL_var (int * 123)>
+-123 * 123            = <TMPL_var (neg_int * 123)>
+
+ 123 * 123            = <TMPL_var (int * int)>
+-123 * 123            = <TMPL_var (neg_int * int)>
+
+// IEEE 754
+ 123.456 * 123.456    = <TMPL_var (float * 123.456)>
+-123.456 * 123.456    = <TMPL_var (neg_float * 123.456)>
+ 123.456 * 123.456    = <TMPL_var (float * float)>
+-123.456 * 123.456    = <TMPL_var (neg_float * float)>
+
+// Integer & IEEE 754
+ 123.456 * 123        = <TMPL_var (float * int)>
+-123.456 * 123        = <TMPL_var (neg_float * int)>
+ 123     * 123.456    = <TMPL_var (int * float)>
+ 123     * -123.456   = <TMPL_var (int * neg_float)>
+
+// /
+// Integer
+ 123 / 124            = <TMPL_var (int / 124)>
+ 123 / 122            = <TMPL_var (int / 122)>
+
+ 123 / 123            = <TMPL_var (int / 123)>
+-123 / 123            = <TMPL_var (neg_int / 123)>
+
+ 123 / 123            = <TMPL_var (int / int)>
+-123 / 123            = <TMPL_var (neg_int / int)>
+
+// IEEE 754
+ 123.456 / 123.456    = <TMPL_var (float / 123.456)>
+-123.456 / 123.456    = <TMPL_var (neg_float / 123.456)>
+ 123.456 / 123.456    = <TMPL_var (float / float)>
+-123.456 / 123.456    = <TMPL_var (neg_float / float)>
+
+// Integer & IEEE 754
+ 123.456 / 123        = <TMPL_var (float / int)>
+-123.456 / 123        = <TMPL_var (neg_float / int)>
+ 123     / 123.456    = <TMPL_var (int / float)>
+ 123     / -123.456   = <TMPL_var (int / neg_float)>
+
+// div
+// Integer
+ 123 div 124          = <TMPL_var (int div 124)>
+ 123 div 122          = <TMPL_var (int div 122)>
+
+ 123 div 123          = <TMPL_var (int div 123)>
+-123 div 123          = <TMPL_var (neg_int div 123)>
+
+ 123 div 123          = <TMPL_var (int div int)>
+-123 div 123          = <TMPL_var (neg_int div int)>
+
+// IEEE 754
+ 123.456 div 123.456  = <TMPL_var (float div 123.456)>
+-123.456 div 123.456  = <TMPL_var (neg_float div 123.456)>
+ 123.456 div 123.456  = <TMPL_var (float div float)>
+-123.456 div 123.456  = <TMPL_var (neg_float div float)>
+
+// Integer & IEEE 754
+ 123.456 div 123      = <TMPL_var (float div int)>
+-123.456 div 123      = <TMPL_var (neg_float div int)>
+ 123     div 123.456  = <TMPL_var (int div float)>
+ 123     div -123.456 = <TMPL_var (int div neg_float)>
+
+// mod
+// Integer
+ 123 mod 12           = <TMPL_var (int mod 12)>
+ 123 mod 12           = <TMPL_var (int mod 12)>
+
+ 123 mod 12           = <TMPL_var (int mod 12)>
+-123 mod 12           = <TMPL_var (neg_int mod 12)>
+
+ 123 mod 123          = <TMPL_var (int mod int)>
+-123 mod 123          = <TMPL_var (neg_int mod int)>
+
+// IEEE 754
+ 123.456 mod 12.3456  = <TMPL_var (float mod 12.3456)>
+-123.456 mod 12.3456  = <TMPL_var (neg_float mod 12.3456)>
+ 123.456 mod 123.456  = <TMPL_var (float mod float)>
+-123.456 mod 123.456  = <TMPL_var (neg_float mod float)>
+
+// Integer & IEEE 754
+ 123.456 mod 123      = <TMPL_var (float mod int)>
+-123.456 mod 123      = <TMPL_var (neg_float mod int)>
+ 123     mod 123.456  = <TMPL_var (int mod float)>
+ 123     mod -123.456 = <TMPL_var (int mod neg_float)>
+// End.

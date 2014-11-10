@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+</head>
+<body>
+	<table width="800">
+		<tbody>
+			<tr>
+				<td width="200">
+					<table bgcolor="#000000" border="0" cellpadding="4" cellspacing="2" width="100%">
+						<tbody>
+							<tr><td bgcolor="#ffffff"><h1>Lebowski benchmark</h1></td></tr>
+						</tbody>
+					</table>
+				</td>
+				<TMPL_foreach adverts as iter><td valign="top" width="200">
+					<table bgcolor="#000000" border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tbody>
+							<tr><td><font color="#ffffff"><b><TMPL_var HTMLESCAPE(iter.title)></b></font></td></tr>
+							<tr><td bgcolor="#ffffff"><small><a href="<TMPL_var url>"><TMPL_var HTMLESCAPE(iter.text)></a></small></td></tr>
+						</tbody>
+					</table>
+				</td></TMPL_foreach>
+			</tr>
+
+			<tr valign="top">
+				<td width="200">
+					<TMPL_if sections>
+					<table cellpadding="3" width="100%">
+						<tbody>
+						<TMPL_foreach sections as iter><tr><td bgcolor="<TMPL_if iter.__odd__>#dddddd<TMPL_else>#eeeeee</TMPL_if>">
+							<font color="#ffffff"><b><a href="http://lb/section.html?id=<TMPL_var URLESCAPE(iter.id)>"><TMPL_var HTMLESCAPE(iter.title)></a>
+							<TMPL_if iter.rip><font color="#999999">R.I.P.</font></TMPL_if></b></font></td></tr>
+						</TMPL_foreach>
+						</tbody>
+					</table></TMPL_if>
+
+					<p><b>Users</b>: <TMPL_var total><br><b>Online</b>: <TMPL_var SIZE(online)><br>
+					<small><i><TMPL_foreach online as iter>
+					<a href="http://lb/user.html?id=<TMPL_var (iter.__index__ + 1)>"><TMPL_var HTMLESCAPE(iter.name)></a></TMPL_foreach>
+					</i></small>
+					</p>
+				</td>
+
+				<td colspan="3" width="400">
+				<TMPL_foreach news as iter>
+					<b><TMPL_var HTMLESCAPE(iter.time)> <TMPL_var HTMLESCAPE(title)></b><br>
+					<small><TMPL_var HTMLESCAPE(iter.text)><a href="http://lb/news.html?id=<TMPL_var URLESCAPE(iter.id)>">[ read full story ]</a></small><br>
+				</TMPL_foreach>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" align="center">
+					<hr>
+					<small><i>This test based on "Big Lebowski" test by Alexey A. Rybak, 2005.<br>
+
+					Please send all questions and suggestions to <b>reki@reki.ru</b></i></small>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,94 @@
+// Start
+
+AVG(a):                      2
+AVG(g):                      1.81712059283
+AVG(h):                      1.63636363636
+AVG(q):                      2.16024689947
+
+BASE64_DECODE/BASE64_ENCODE: Hello, World
+
+CAST(int):                   1
+CAST(int):                   8
+CAST(dec):                   10
+CAST(oct):                   8
+CAST(hex):                   16
+CAST(float):                 1.234
+
+CONCAT:                      HelloWorld!
+
+DATE_FORMAT:                 2008-01-16 16:32:03
+
+DEFAULT:                     Default value
+
+DEFINED(nonexistent):        0
+DEFINED             :        1
+
+FORM_PARAM:                  <input type="hidden" name="param" value="Hello, World!" />
+
+GET_TYPE:                    INTEGER
+GET_TYPE:                    REAL
+GET_TYPE:                    STRING
+GET_TYPE:                    ARRAY
+
+HASH_KEYS:                    one three two |  one three two
+
+HREF_PARAM:                  hello=%3Cb%3Etest%3C/b%3E+%22test%22+%24test%24&amp;
+
+IN_ARRAY:                    1
+
+IN_SET:                      1
+
+LIST:                        cat dog bat rat 
+LIST_ELEMENT:                3
+
+LOG:                         2.00432137378
+LOG:                         2.00432137378
+LOG:                         10
+LOG:                         1
+
+MB_SIZE:                     26
+
+MB_SUBSTR:                   Привет, мир!
+MB_SUBSTR:                   World! Привет
+MB_SUBSTR:                   Hello, :) мир!
+
+MB_TRUNCATE:                 Hello, World
+MB_TRUNCATE:                 Hello, World...
+
+MIN:                         1
+
+MAX:                         3
+
+NUM_FORMAT:                  1 234 567 890
+
+SIZE:                        4
+SIZE:                        3
+
+SPRINTF:                     -123 0
+
+SUBSTR:                      World
+
+TRUNCATE:                    Hello
+TRUNCATE:                    Hello...
+
+VERSION      :               CTPP2 engine v2.8.2 (Dzoraget), copyright (c) 2004 - 2012 CTPP Dev. Team
+VERSION(full):               Engine: CTPP2 engine v2.8.2 (Dzoraget), copyright (c) 2004 - 2012 CTPP Dev. Team;
+RuntimeLibrary: CTPP Standard Library v2.8.2 (Dzoraget), copyright (c) 2007 - 2012 CTPP Dev. Team;
+License: BSD-like, see http://ctpp.havoc.ru/;
+
+// Escape
+HTMLESCAPE:                  &lt;b&gt;test&lt;/b&gt; &quot;test&quot; $test$
+
+JSON:                        "\u003cb\u003etest\u003c\/b\u003e \"test\" $test$"
+
+JSONESCAPE:                  <b>test<\/b> \"test\" $test$
+
+URLESCAPE:                   %3Cb%3Etest%3C/b%3E+%22test%22+%24test%24
+
+URIESCAPE:                   %3Cb%3Etest%3C/b%3E%20%22test%22%20%24test%24
+
+XMLESCAPE:                   &lt;b&gt;test&lt;/b&gt; &quot;test&quot; $test$
+
+WMLESCAPE:                   &lt;b&gt;test&lt;/b&gt; &quot;test&quot; $$test$$
+
+// End.

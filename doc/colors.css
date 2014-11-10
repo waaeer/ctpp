@@ -1,0 +1,16 @@
+.tmpl {
+    color: #008000;
+}
+
+.func {
+    color: #008000;
+}
+
+.arg {
+    color: blue;
+    font-style: italic;
+}
+
+.const {
+    color: #8E2323;
+}

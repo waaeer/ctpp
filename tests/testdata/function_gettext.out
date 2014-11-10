@@ -1,0 +1,18 @@
+// Start
+
+_: Unknown message
+GETTEXT: Unknown message
+_: Тестовое сообщение
+GETTEXT: Тестовое сообщение
+_ n1: %d файл
+_ n2: %d файла
+_ n5: %d файлов
+GETTEXT n1: %d файл
+GETTEXT n2: %d файла
+GETTEXT n5: %d файлов
+_ n1: unknown singular message
+_ n2: unknown plural message
+GETTEXT n1: unknown singular message
+GETTEXT n2: unknown plural message
+
+// End.

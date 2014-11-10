@@ -1,0 +1,16 @@
+// Start
+
+<TMPL_foreach array_int as iter>
+	Data: <TMPL_var iter>
+</TMPL_foreach>
+
+<TMPL_foreach items as item>[ITEM ORIGINAL    : <TMPL_var OBJ_DUMP(item)>]
+<TMPL_foreach item.subitems as subitem></TMPL_foreach>[ITEM 1 LOOP      : <TMPL_var OBJ_DUMP(item)>]
+[ITEM AFTER 1 LOOP: <TMPL_var OBJ_DUMP(item)>]
+<TMPL_foreach item.subitems as subitem>[ITEM 2 LOOP      : <TMPL_var OBJ_DUMP(item)>]
+[ITEM AFTER 2 LOOP: <TMPL_var OBJ_DUMP(item)>]
+</TMPL_foreach></TMPL_foreach>
+<TMPL_foreach LIST("test1", "test2", "test3") as f><TMPL_break><TMPL_var f></TMPL_foreach>
+<TMPL_foreach LIST("test1", "test2", "test3") as f><TMPL_var f><TMPL_if (f eq "test2")><TMPL_break></TMPL_if></TMPL_foreach>
+<TMPL_foreach LIST("test1", "test2", "test3") as f><TMPL_break><TMPL_foreach LIST("test1", "test2", "test3") as f2></TMPL_foreach><TMPL_var f></TMPL_foreach>
+// End.

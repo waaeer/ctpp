@@ -1,0 +1,28 @@
+// Start
+Integer const:         123
+Float sc. const:       3.141
+Float sc. const:       314.1
+"" string const:       Te's"t1 TEST TEST
+'' string const:       Te's"
+t1
+
+Integer:               123
+Neg. Integer:          -123
+
+Float:                 123.456
+Neg. Float:            -123.456
+
+String:                "Hello, World!"
+
+String + Int:          "123"
+String + Neg. Int:     "-123"
+
+String + Float:        "123.456"
+String + Neg. Float:   "-123.456"
+
+Not existent variable: 
+
+Array:                 ARRAY
+Hash:                  HASH
+
+// End.

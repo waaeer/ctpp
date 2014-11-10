@@ -1,0 +1,431 @@
+ CTPP version 2.8.3 change log
+ -----------------------------
+
+ Legend
+ ------
+   + = New feature
+   * = Improved feature
+   - = Removed feature
+   ! = Bug fixed
+   = = Unresolved
+   # = Other stuff
+
+ Version 2.8.3 (10.11.2012)
+ --------------------------
+  01. + Returned curly brakets as an alias for square
+  02. ! Fixed error reporting
+
+ Version 2.8.2 (13.06.2012)
+ --------------------------
+  01. - Removed the operator <TMPL_loop> ... </TMPL_loop>
+  02. - Removed __FIRST__, __LAST__, __INNER__, __ODD__, __COUNTER__, __EVEN__, __SIZE__, __CONTENT__
+  03. - Removed string compat old version in <TMPL_include>
+  04. - Removed the attribute 'map' in <TMPL_include>
+  05. - Removed functions: NUMERAL, ARRAY_ELEMENT, HASH_ELEMENT
+  06. ! Full support of variables in <TMPL_call>
+  07. + Support of hashes in <TMPL_foreach>
+  08. + New operator <TMPL_break>
+  09. + New attributes for iterator of <TMPL_foreach>: __first__, __last__, __index__, __key__, __inner__, __odd__, __even__, __size__
+  10. + New functions: CONTEXT, LIST
+  11. + Documentation of the CT++ template language (English version)
+  12. # Renamed JSESCAPE to JSONESCAPE. Refactored the code
+  13. # Performance boost for stream-like DumpJsonString fucntion
+  14. # Refactored code
+
+ Version 2.8.0 (28.12.2011)
+ --------------------------
+  01. * Improved access to arrays and hashes
+
+ Version 2.7.6 (28.12.2011)
+ --------------------------
+  01. ! Bug fixes
+  02. + Tests
+
+ Version 2.7.5 (23.12.2011)
+ --------------------------
+  01. ! Fixes in CDT::operator=
+  02. ! Fixes in block parameters
+
+ Version 2.7.4 (19.12.2011)
+ --------------------------
+  01. ! Fixes in CDT::operator=
+  02. + New constant operator[INT_32] and constant operator[STLW::string]
+
+ Version 2.7.3 (14.11.2011)
+ --------------------------
+  01. ! Fixes in block arguments
+  02. ! New access operator [] for constant objects
+
+ Version 2.7.2 (05.10.2011)
+ --------------------------
+  01. ! Fixes in URI/URL Escape functions
+  02. ! Fixes codegenerator for call/block operators
+
+ Version 2.7.1 (04.07.2011)
+ --------------------------
+  01. + New operator <TMPL_verbose> ... </TMPL_verbose>
+  02. + New modifications of *ALL* operators allows cut leading and trailing spaces
+  03. + New implementation of GETTEXT function
+  04. ! Bug fixes
+
+ Version 2.7.0 (23.05.2011)
+ --------------------------
+  01. + Access to arrays ahd hashes contents in variables
+
+ Version 2.6.15 (16.05.2011)
+ ---------------------------
+  01. ! Fixes in TMPL_foreach translate map
+
+ Version 2.6.14 (28.04.2011)
+ ---------------------------
+  01. ! Gettext patches
+
+ Version 2.6.13 (05.04.2011)
+ ---------------------------
+  01. ! Fixes in SPRINTF function (thanks for patch to Varinov Nicolay <nic@sotcom.ru>)
+  02. New methods in CDT class: JoinArrayElements, JoinHashKeys, JoinHashKeys, GetHashKeys, GetHashValues, MergeCDT
+
+ Version 2.6.12 (15.03.2011)
+ ---------------------------
+  01. ! Fixes in Unicode unescape algorithm, thanks to <demonister @ gmail.com>
+
+ Version 2.6.11 (28.02.2011)
+ ---------------------------
+  01. * Fixes in CTPP2DTOA.cpp, thanks to Vincent <vincent.hervieux@gmail.com>
+
+ Version 2.6.10 (11.02.2011)
+ ---------------------------
+  01. * Fixes in SPRINTF function (thanks for patch to Varinov Nicolay <nic@sotcom.ru>)
+
+ Version 2.6.9 (09.02.2011)
+ --------------------------
+  01. * New function: HOSTNAME
+
+ Version 2.6.8 (27.01.2011)
+ --------------------------
+  01. * New function: GET_TYPE, thanks to Tim Tavlintsev
+
+ Version 2.6.7 (01.11.2010)
+ --------------------------
+  01. * Dump/RecursiveDump improvements
+  02. * NUM_FORMAT improvements, thanks to Lunkov Alexander
+  03. ! SPRINTF %f/%e/%g format fixes, thanks to Vlad 'twilight' Maximov
+
+ Version 2.6.6 (05.10.2010)
+ --------------------------
+  01. ! Linux bug fixes
+
+ Version 2.6.5 (22.09.2010)
+ --------------------------
+  01. ! Fixes in CTPP2 dialect compiler, thanks to Vlad 'twilight' Maximov
+
+ Version 2.6.4 (20.09.2010)
+ --------------------------
+  01. * Fixes in SortArray method
+
+ Version 2.6.3 (27.07.2010)
+ --------------------------
+  01. ! Fixes in TMPL_foreach iterators (thanks to Kirichenko Sergey <kirichenko@post.km.ru>)
+
+ Version 2.6.2 (20.07.2010)
+ --------------------------
+  01. + CDT Swap method
+  02. + CDT SortArray method & helpers
+
+ Version 2.6.1 (15.06.2010)
+ --------------------------
+  01. ! Various bug fixes
+  02. # First stable version if branch 2.6
+
+ Version 2.6.0 (08.06.2010) (Technology Preview)
+ -----------------------------------------------
+  01. + New CDT implementation
+  02. + New contextual variables: __RCOUNTER__ & __OUTER__
+  03. + New function: HASH_ELEMENT
+  04. # System identificator changed from `Sanahin` to `Dzoraget`
+  05. # HUGE API changes
+
+ Version 2.5.19 (24.05.2010)
+ ---------------------------
+  01. ! Math ops in Foreach cycle
+
+ Version 2.5.18 (09.04.2010)
+ ---------------------------
+  01. ! Darwin OS fixes only (types)
+
+ Version 2.5.17 (02.04.2010)
+ ---------------------------
+  01. + New function: SPRINTF
+  02. * StreamOutputCollector.hpp fixes
+  03. ! Fixes in template compiler(IsFloat mechanism)
+
+ Version 2.5.16 (11.02.2010)
+ ---------------------------
+  01. # Bump Copyright year
+  02. + Documentation for functions NUMERAL, LIST_ELEMENT and ARRAY_ELEMENT
+  03. + English version of documentation (thanks to Alexey Kerdivare <alexey.kerdivare@gmail.com>
+  04. * Function EscapeJSONString is now ECMA-262 compatible
+
+ Version 2.5.15 (30.12.2009)
+ ---------------------------
+  01. ! Fixes in function NUM_FORMAT, thanks to http://ilnarb.livejournal.com/
+
+ Version 2.5.14 (02.12.2009)
+ ---------------------------
+  01. + New method for class CDT: Erase. Erase element from hash by specified key name.
+
+ Version 2.5.13 (24.11.2009)
+ ---------------------------
+  01. ! Fixes in Base64Encode function
+
+ Version 2.5.12 (18.10.2009)
+ ---------------------------
+  01. + New data collector: C++ ostream collector (thanks to Chris Trees <christrees@yahoo.com>)
+  02. + Port to CygWin (thanks to NetImperia <netimperia@netimperia.com>)
+  03. + New overloaded method for class CDT: Exist. Check existence of element.
+  04. ! Fixes in CDT class: pointer POINTER_VAL
+
+ Version 2.5.11 (27.08.2009)
+ ---------------------------
+  01. ! Fixes in virtual machine (CMP instruction)
+
+ Version 2.5.10 (18.08.2009)
+ --------------------------_
+  01. + New functions: LIST_ELEMENT & ARRAY_ELEMENT
+  02. ! Fixes in JSON parser
+
+ Version 2.5.9 (13.08.2009)
+ --------------------------
+  01. ! Fixes in <TMPL_foreach .. > <TMPL_include "file"> </TMPL_foreach>
+
+ Version 2.5.8 (05.08.2009)
+ --------------------------
+   01. * Completely rewrite code of JSON parser
+
+ Version 2.5.7 (24.06.2009)
+ --------------------------
+   01. + New function: NUMERAL
+   02. ! Fixes in TRUNCATE & MB_TRUNCATE functions
+
+ Version 2.5.6 (09.06.2009)
+ --------------------------
+   01. ! Fixes in JSESCAPE function
+
+ Version 2.5.5 (02.06.2009)
+ --------------------------
+   01. ! Fixes in math. expressions inside functions: <TMPL_var FOO(bar + baz)>
+
+ Version 2.5.4 (20.05.2009)
+ --------------------------
+   01. ! Fixes for MSVC 2008
+   02. ! Fixes in Win32/CryptoAPI
+   03. * Avoid a lot of warnings on gcc 4.3+
+   04. # #include <...> changed to #include "..." for all files of project
+
+ Version 2.5.3 (12.05.2009)
+ --------------------------
+   01. * Removed inline methods of exception classes
+
+ Version 2.5.2 (20.04.2009)
+ --------------------------
+   01. ! Bug fixes in branches inside foreach operator
+
+ Version 2.5.1 (17.04.2009)
+ --------------------------
+   01. ! Bug fixes in foreach operator
+   02. + Documentation for foreach operator
+
+ Version 2.5.0 (16.04.2009)
+ --------------------------
+   01. + New operator: <TMPL_foreach
+   02. * Gettext function accept now 1, 2 or 3 parameters like
+         GNU gettext, dgettext dcgettext functions
+   03. # All CTPPxxxxx files renamed to CTPP2xxxxx
+
+ Version 2.4.10 (08.04.2009)
+ ---------------------------
+   01. + New function: WMLESCAPE
+
+ Version 2.4.9 (02.04.2009)
+ --------------------------
+   01. + New classes: SimpleVM, SimpleCompiler
+
+ Version 2.4.8 (18.03.2009)
+ --------------------------
+   01. + New functions: CONCAT, SUBSTR, TRUNCATE, MB_SIZE, MB_TRUNCATE, MB_SUBSTR
+
+ Version 2.4.7 (16.03.2009)
+ --------------------------
+   01. * New flags for iconv converter for class StringIconvOutputCollector
+         and function ICONV
+
+ Version 2.4.6 (07.03.2009)
+ --------------------------
+   01. + New output data collector with charset recoding
+   02. + New functions: MIN, MAX, AVG (Arithmetic, Geometric, Harmonic and Quadratic means)
+
+ Version 2.4.5 (04.03.2009)
+ --------------------------
+   01. + New functions: RANDOM, LOG
+   02. + MacOS port files
+
+ Version 2.4.4 (15.02.2009)
+ --------------------------
+   01. + New functions: HMAC_MD5, URIESCAPE
+   02. + New namespace/variable delimiter: `:` (<TMPL_var a:b.c.d>)
+   03. ! EscapeJSONString empty string bug
+   04. # Port to MacOS X
+   05. - Removed CDT::operator+(std::string)
+
+ Version 2.4.3 (08.02.2009)
+ --------------------------
+   01. + Port to Microsoft (R) Windows (TM)
+         (thanks to vsheveliov <vsheveliov@mail.ru>)
+
+ Version 2.4.2 (25.01.2009)
+ --------------------------
+   01. * Fixed warnings in HashTable class
+   02. * Fixed incorrect default message in VMException
+
+ Version 2.4.1 (18.01.2009)
+ --------------------------
+   01. + New functions: JSON, JSESCAPE
+   02. * Documentation for new features
+   03. # Code cleanup
+
+ Version 2.4.0 (14.01.2009)
+ --------------------------
+   01. + New operators: <TMPL_call & <TMPL_block
+   02. # API changes
+
+ Version 2.3.11 (07.11.2008)
+ ---------------------------
+   01. * JSON parser can now parse objects of all types
+
+ Version 2.3.10 (16.09.2008)
+ ---------------------------
+   01. * Fixed "Use of uninitialised value of size 4" valgrind warning
+   02. + Port to ALT Linux (thanks to Denis Klimov <zver@altlinux.org>)
+
+ Version 2.3.9 (12.09.2008)
+ --------------------------
+   01. * Improvements in parsing Non-HTML templates
+
+ Version 2.3.8 (05.09.2008)
+ --------------------------
+   01. + Port on SunOS 5.10 i386 and amd64
+   02. * CDT datatype improvements
+
+ Version 2.3.7 (02.09.2008)
+ --------------------------
+   01. + Nested loops from various data sources
+   02. ! Fixes in error handling
+
+ Version 2.3.6 (11.08.2008)
+ --------------------------
+   01. + <TMPL_loop accept now contextual variable __CONTENT__ as argument
+   02. + New function: DEFINED
+   03. ! Fixes in bytecode loader loader
+
+ Version 2.3.5 (07.08.2008)
+ --------------------------
+   01. + New input data formats of CAST function:
+         "Octal", "Decimal" and "Hexadecimal"
+   02. * Function DATE_FORMAT accept now strings as first argument
+
+ Version 2.3.4 (11.07.2008)
+ --------------------------
+   01. * Debian Lenny bug fixes
+
+ Version 2.3.3 (24.06.2008)
+ --------------------------
+   01. * Debug subsystem improvements
+
+ Version 2.3.2 (18.06.2008)
+ --------------------------
+   01. + New methods of CDT class: Find and void PushBack(const CDT & oValue)
+         and Iterator Find(const std::string & sKey)
+
+ Version 2.3.1 (03.06.2008)
+ --------------------------
+   01. * More information about errors in compiler
+   02. * Support of empty arrays and objects in JSON
+
+ Version 2.3.0 (21.05.2008)
+ --------------------------
+   01. + New debug subsystem
+   02. ! Bug fix in __CONTENT__ cont. variable handling
+   03. + New function: ERROR (only for debugging purposes)
+
+ Version 2.2.3 (14.05.2008)
+ --------------------------
+   01. * New output format for FLOAT data type: %.*G
+   02. + New function: NUM_FORMAT
+   03. + C and C++-like comments in JSON file
+   04. - Function ARRAY_SIZE renamed to SIZE
+
+ Version 2.2.2 (28.04.2008)
+ --------------------------
+   01. ! JSON object parser
+   02. ! If / Unless multibranch "Stack underflow"
+
+ Version 2.2.1 (23.04.2008)
+ --------------------------
+   01. + New Function: ARRAY_SIZE
+
+ Version 2.2.0 (18.04.2008)
+ --------------------------
+   01. + New incapsulated type for CDT class: POINTER
+   02. + New methods: CDT::PushBack, CDT::GetPointer and CDT::GetObject<typename T>
+   03. + Crossplatform format of executable bytecode file
+   04. + Check of CRC32 checksum for bytecode file
+   05. + New function: DEFINED. Check that value has not an UNDEF type.
+   06. ! Fixed error in multiple logical && and || comparison
+
+ Version 2.1.2 (28.03.2008)
+ --------------------------
+   01. + Renaming values in <TMPL_include 'filename.tmpl' map (value_in_include = value)>
+       Inverse to map (value : value_in_include) order of variables
+
+ Version 2.1.1 (19.03.2008)
+ --------------------------
+   01. + Renaming values in <TMPL_include 'filename.tmpl' map (value : value_in_include)>
+
+ Version 2.1.0 (14.03.2008)
+ --------------------------
+   01. + Arithmetic & string operations in operators
+   02. + New function: CAST. Cast to specified type.
+   03. # Up to 10% performance
+
+ Version 2.0.5 (02.03.2008)
+ --------------------------
+   01. + Namespaces in variable names (<TMPL_var a.b.c>)
+   02. ! Bug fixes
+
+ Version 2.0.4 (18.02.2008)
+ --------------------------
+   01. + New contextual variable: __CONTENT__
+   02. + Small API changes, see file VMDumper.hpp
+   03. ! Linux RPATH bug fixes
+
+ Version 2.0.3 (15.02.2008)
+ --------------------------
+   01. ! Fixed "stack underflow" error in <TMPL_unless UDF( ... )>
+   02. + New functions: iconv and obj_dump
+   03. + Russian documentation (in HTML)
+   04. + New data collector class: StringOutputCollector
+
+ Version 2.0.2 (08.02.2008)
+ --------------------------
+   01. ! Bug fixes
+   02. + New functions: base64_encode, base64_decode and md5
+
+ Version 2.0.1 (04.02.2008)
+ --------------------------
+   01. ! Fixed "stack underflow" error in <TMPL_if UDF( ... )>
+   02. + New method CDT::RecursiveDump
+   03. + FreeBSD port, Debian package, RPM spec file
+
+ Version 2.0.0 (15.01.2008)
+ --------------------------
+   01. # Initial revision

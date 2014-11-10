@@ -1,0 +1,42 @@
+    FIRST VERBOSE (4 spaces before):
+<TMPL_verbose>
+
+
+NO_SPACES_AROUND
+
+
+
+</TMPL_verbose>
+    SECOND VERBOSE (4 spaces before):
+<TMPL_verbose>
+
+    NESTED VERBOSE:
+    <TMPL_verbose>
+    NO_SPACES_AROUND
+    </TMPL_verbose>
+
+</TMPL_verbose>
+    THIRD VERBOSE (4 spaces before):
+<TMPL_verbose>
+
+
+
+    <TMPL_if (1 ne 0)>
+        :VAR 1:     <TMPL_var string>
+              
+        :VAR 2:     <TMPL_var int>        
+    </TMPL_if>
+
+
+
+
+
+</TMPL_verbose>
+           OUTPUT_WITH_SPACES
+
+Another verbose mode starts here:
+<-TMPL_if (1 ne 0)->
+        :VAR 1:     <-TMPL_var string->
+
+        :VAR 2:     <-TMPL_var int->
+<-/TMPL_if->

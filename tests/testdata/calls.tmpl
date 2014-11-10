@@ -1,0 +1,57 @@
+<TMPL_block "test" args(a, b, c)><TMPL_var a>|<TMPL_var b>|<TMPL_var c></TMPL_block>
+<TMPL_block "test1" args(a)><TMPL_var a></TMPL_block>
+<TMPL_block "test2" args(a)><TMPL_var a></TMPL_block>
+<TMPL_block "test3" args(a)><TMPL_var a></TMPL_block>
+<TMPL_block "test4" args(a)><TMPL_var SPRINTF("%d", a)></TMPL_block>
+
+<TMPL_call "test" args("vara", "varb", "varc")>
+<TMPL_call func args("vara", "varb", "varc")>
+<TMPL_foreach funcs as f><TMPL_call f args("BINGO")></TMPL_foreach>
+<TMPL_foreach array_int as a><TMPL_call "test3" args(a)>|</TMPL_foreach>
+<TMPL_call "test4" args(int)>
+
+<TMPL_block 'testblock' args(block, ident)>
+        <TMPL_var block.name>|
+        <TMPL_var ident>#
+        <TMPL_if block.data>
+                <TMPL_call 'testblock' args(block.data, (ident + 5))>
+        </TMPL_if>
+</TMPL_block>
+<TMPL_call 'testblock' args(data, 10)>
+
+<TMPL_block 'test5' args(dummy)></TMPL_block>
+<TMPL_block 'foo' args(a)>
+<TMPL_if (1 eq 0)><TMPL_call 'test5' args(2)><TMPL_elsif (a eq 1)></TMPL_if>
+</TMPL_block>
+<TMPL_call 'foo' args(1)>
+
+<TMPL_block 'inner' args(dummy)></TMPL_block>
+<TMPL_block 'outer' args(argument)>
+    <TMPL_if (argument eq 'one')>
+        <TMPL_call 'inner' args('dummy')>
+    <TMPL_elsif (argument eq 'two')>
+    </TMPL_if>
+</TMPL_block>
+<TMPL_call 'outer' args('two')>
+
+<TMPL_block 'outer2' args(argument)>
+    <TMPL_if (argument eq 'one')>
+    <TMPL_elsif (argument eq 'two')>
+    </TMPL_if>
+</TMPL_block>
+
+<TMPL_call 'outer2' args('two')>
+
+<TMPL_block "form_renderer" args(form)>
+  <TMPL_var OBJ_DUMP(HASH_KEYS(form))>
+  <TMPL_var OBJ_DUMP(form)>
+  <TMPL_var OBJ_DUMP(form.fields)>
+
+  <TMPL_foreach HASH_KEYS(form) as key>
+    <TMPL_var OBJ_DUMP(form)>
+  </TMPL_foreach>
+
+</TMPL_block>
+
+<TMPL_call "form_renderer" args(data.edit_card_form)>
+

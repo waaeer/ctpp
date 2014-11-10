@@ -1,0 +1,27 @@
+// Start
+Integer const:         <TMPL_var 123>
+Float sc. const:       <TMPL_var 3.141>
+Float sc. const:       <TMPL_var 3.141E+2>
+"" string const:       <TMPL_var "Te's\"t1 \x54\x45\u0053\u0054 \124\105\123\124">
+'' string const:       <TMPL_var 'Te\'s"\nt1'>
+
+Integer:               <TMPL_var int>
+Neg. Integer:          <TMPL_var neg_int>
+
+Float:                 <TMPL_var float>
+Neg. Float:            <TMPL_var neg_float>
+
+String:                "<TMPL_var string>"
+
+String + Int:          "<TMPL_var string_int>"
+String + Neg. Int:     "<TMPL_var neg_string_int>"
+
+String + Float:        "<TMPL_var string_float>"
+String + Neg. Float:   "<TMPL_var neg_string_float>"
+
+Not existent variable: <TMPL_var not.existent>
+
+Array:                 <TMPL_var GET_TYPE(array_int)>
+Hash:                  <TMPL_var GET_TYPE(hash)>
+
+// End.

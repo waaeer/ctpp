@@ -1,0 +1,9 @@
+    FIRST VERBOSE (4 spaces before):
+NO_SPACES_AROUND
+    SECOND VERBOSE (4 spaces before):
+NESTED VERBOSE:NO_SPACES_AROUND
+    THIRD VERBOSE (4 spaces before):
+:VAR 1:Hello, World!:VAR 2:123
+           OUTPUT_WITH_SPACES
+
+Another verbose mode starts here::VAR 1:Hello, World!:VAR 2:123

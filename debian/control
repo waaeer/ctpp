@@ -1,0 +1,22 @@
+Source: ctpp2
+Section: unknown
+Priority: extra
+Maintainer: Andrei V. Shetuhin <reki@reki.ru>
+Build-Depends: debhelper (>= 5), libssl-dev (>= 0.9.7), cmake (>= 2.6), python-docutils
+Standards-Version: 3.7.2
+
+Package: ctpp2
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Crossplatform C++ Template engine
+  Template engine, analog of Perl module HTML::Template,
+  written in C++.
+
+Package: ctpp2-dev
+Section: libdevel
+Priority: extra
+Architecture: any
+Depends: ctpp2 ( = ${Source-Version})
+Description: CTPP2 header files and documentation
+  Template engine, analog of Perl module HTML::Template,
+  written in C++; header files and documentation.

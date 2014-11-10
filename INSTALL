@@ -1,0 +1,180 @@
+INSTALLATION INTRODUCTION
+-------------------------
+
+This file describes how to compile and install CTPP2 on your
+system.
+
+        ==============================================
+        =                                            =
+        =  NOTE: You will need an ANSI C++ compiler  =
+        =  with STL support, cmake building system   =
+        =  (http://www.cmake.org/) and, depends of   =
+        =    cmake flags, installed PCRE library     =
+        =                                            =
+        ==============================================
+
+
+For most systems, execute the following to compile and install
+CTPP2:
+        cmake .
+        make
+        make install
+
+If you want to run tests, execute "make test" command.
+
+To clean package, run "./ClearPackage.sh" script.
+
+CONFIGURATION OPTIONS
+---------------------
+
+GETTEXT_SUPPORT - enable gettext (libintl) support, default on
+DEBUG_MODE - compile with debug output, default off
+ENABLE_OPTIMIZATION - compile with optimization, default on
+
+
+
+PLATFORM SPECIFIC NOTES
+-----------------------
+
+  MODERN PLATFORMS BY VENDORS
+  ---------------------------
+
+    FreeBSD
+    -------
+      |
+      |- FreeBSD 8.1-RELEASE
+      |  amd64, gcc version 4.2.1 20070719  [FreeBSD]
+      |  i386,  gcc version 4.2.1 20070719  [FreeBSD]
+      |
+      |- FreeBSD 8.1-RC2
+      |  powerpc, gcc version 4.2.1 20070719  [FreeBSD]
+      |
+      |- FreeBSD 7.2-RELEASE
+      |  amd64, gcc version 4.2.1 20070719  [FreeBSD]
+      |  i386,  gcc version 4.2.1 20070719  [FreeBSD]
+      |  i386,  gcc version 4.4.1 20090421 (prerelease) (GCC)
+      |
+      |- FreeBSD 7.1-RELEASE
+      |  amd64, gcc version 4.2.1 20070719  [FreeBSD]
+      |  i386,  gcc version 4.2.1 20070719  [FreeBSD]
+      |
+      |- FreeBSD 7.0-RELEASE
+      |  amd64, gcc version 4.2.1 [FreeBSD] 20070719
+      |  i386,  gcc version 4.3.0 [FreeBSD] 20070719
+      |
+      |- FreeBSD 6.3-RELEASE-p2
+      |  i386,  gcc version 3.4.6 [FreeBSD] 20060305
+      |
+      |- FreeBSD 6.3-STABLE
+      |  amd64, gcc version 3.4.6 [FreeBSD] 20060305
+      |  i386,  gcc version 3.4.6 [FreeBSD] 20060305
+      |
+      |- FreeBSD 6.2-STABLE
+      |  i386,  gcc version 3.4.6 [FreeBSD] 20060305
+      |  i386,  gcc version 4.3.0 20061111 (experimental)
+      |
+      |- FreeBSD 6.2-RELEASE
+      |  amd64, gcc version 3.4.6 [FreeBSD] 20060305
+      |  i386,  gcc version 3.4.6 [FreeBSD] 20060305
+      |
+      |- FreeBSD 6.0-RELEASE-p4
+         i386,  gcc version 3.4.4 [FreeBSD] 20050518
+
+    Red Hat
+    -------
+      |
+      |- Red Hat Enterprise Linux Server release 5 (Tikanga)
+         amd64, gcc version 4.1.2 20080704 (Red Hat 4.1.2-48)
+
+    Fedora
+    ------
+      |
+      |- Fedora release 8 (Werewolf)
+      |  i386, gcc version 4.1.2 20070925 (Red Hat 4.1.2-33)
+      |
+      |- Fedora release 7 (Moonshine)
+         i386, gcc version 4.1.2 20070925 (Red Hat 4.1.2-27)
+
+    CentOS
+    ------
+      |
+      |- CentOS release 5 (Final)
+         i386, gcc version 4.1.2 20070626 (Red Hat 4.1.2-14)
+
+    SuSe
+    ----
+      |
+      |- openSuSe 11.1
+         i386, gcc version 4.3.2 [gcc-4_3-branch revision 141291] (SUSE Linux)
+
+    Debian
+    ------
+      |
+      |- Debian GNU/Linux 6.0
+      |  amd64, gcc version 4.4.5 (Debian 4.4.5-8)
+      |  i386, gcc version 4.4.5 (Debian 4.4.5-8)
+      |
+      |- Debian GNU/Linux 5.0
+      |  amd64, gcc version 4.3.2 (Debian 4.3.2-1.1)
+      |  i386,  gcc version 4.3.2 (Debian 4.3.2-1.1)
+      |
+      |- Debian GNU/Linux 4.0
+         amd64, gcc version 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
+         i386,  gcc version 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
+
+    Ubuntu
+    ------
+      |
+      |- Ubuntu 10.04 LTS
+      |  i386, gcc version 4.4.3 (Ubuntu 4.4.3-4ubuntu5)
+      |
+      |- Ubuntu 12.04.1 LTS
+      |  x86_64, gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5)
+
+    Arch Linux
+    ----------
+      |
+      |- Arch
+      |  i386, gcc version 4.6.0 20110429
+      |
+      |- 2010.05
+         amd64, gcc version 4.5.1 (GCC)
+
+    Sun Microsystems
+    ----------------
+      |
+      |- Sun Solaris 10
+         sparc, Sun C++ 5.9 SunOS_sparc Patch 124863-01 2007/07/25
+         i386, gcc version 3.4.3 (csl-sol210-3_4-branch+sol_rpath)
+         i386, Sun C++ 5.8 2005/10/13
+         amd64, gcc version 3.4.3 (csl-sol210-3_4-branch+sol_rpath)
+         amd64, Sun C++ 5.8 2005/10/13
+
+    Microsoft
+    ---------
+      |
+      |- Microsoft (R) Windows (TM) XP
+         Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 15.00.30729.01 for 80x86 (Visual Studio 2008)
+         Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 15.00.21022.08 for 80x86 (Visual Studio 2008)
+         Intel(R) C++ Compiler Professional for applications running on IA-32, Version 11.0
+
+    Apple Inc.
+    ----------
+      |
+      |- Mac OS X (Darwin Kernel Version 9.6.0)
+         i686-apple-darwin9-gcc-4.0.1 (GCC) 4.0.1 (Apple Inc. build 5488)
+
+  OLD PLATFORMS BY VENDORS
+  ------------------------
+
+    Red Hat
+    -------
+      |
+      |- Red Hat Linux release 9 (Shrike)
+         i386, gcc version 3.2.2 20030222 (Red Hat Linux 3.2.2-5): Works fine.
+
+    FreeBSD
+    -------
+      |
+      |- FreeBSD 4.11-STABLE
+         gcc 2.95.30: Works fine.
