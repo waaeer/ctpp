@@ -4446,11 +4446,11 @@ void CDT::MergeCDT(CDT & oDestination, const CDT & oSource, const eMergeStrategy
 					++itvArray;
 					if (itvArray == itvEnd)
 					{
-						oDestination.u.p_data -> u.m_data -> insert(STLW::pair<String, CDT>(itvKey -> GetString(), CDT()));
+						oDestination.u.p_data -> u.m_data -> insert(STLW::pair<const String, CDT>(itvKey -> GetString(), CDT()));
 						break;
 					}
 
-					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<String, CDT>(itvKey -> GetString(), *itvArray));
+					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<const String, CDT>(itvKey -> GetString(), *itvArray));
 
 					++itvArray;
 					if (itvArray == itvEnd) { break; }
@@ -4464,7 +4464,7 @@ void CDT::MergeCDT(CDT & oDestination, const CDT & oSource, const eMergeStrategy
 
 				while(itmHash != itmEnd)
 				{
-					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<String, CDT>(itmHash -> first, itmHash -> second));
+					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<const String, CDT>(itmHash -> first, itmHash -> second));
 					++itmHash;
 				}
 			}
@@ -4488,11 +4488,11 @@ void CDT::MergeCDT(CDT & oDestination, const CDT & oSource, const eMergeStrategy
 				++itvArray;
 				if (itvArray == itvEnd)
 				{
-					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<String, CDT>(itvKey -> GetString(), CDT()));
+					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<const String, CDT>(itvKey -> GetString(), CDT()));
 					break;
 				}
 
-				oDestination.u.p_data -> u.m_data -> insert(STLW::pair<String, CDT>(itvKey -> GetString(), *itvArray));
+				oDestination.u.p_data -> u.m_data -> insert(STLW::pair<const String, CDT>(itvKey -> GetString(), *itvArray));
 
 				++itvArray;
 				if (itvArray == itvEnd) { break; }
@@ -4509,7 +4509,7 @@ void CDT::MergeCDT(CDT & oDestination, const CDT & oSource, const eMergeStrategy
 				Map::iterator itmElement = oDestination.u.p_data -> u.m_data -> find(itmHash -> first);
 				if (itmElement == oDestination.u.p_data -> u.m_data -> end())
 				{
-					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<String, CDT>(itmHash -> first, itmHash -> second));
+					oDestination.u.p_data -> u.m_data -> insert(STLW::pair<const String, CDT>(itmHash -> first, itmHash -> second));
 				}
 				else
 				{
