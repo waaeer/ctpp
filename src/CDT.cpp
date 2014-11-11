@@ -735,7 +735,7 @@ const CDT & CDT::GetExistedCDT(const STLW::string & sKey, bool & bCDTExist) cons
 		return oNonExistentCDT;
 	}
 
-	Map::const_iterator itmHash = u.p_data -> u.m_data -> find(sKey);
+	Map::iterator itmHash = u.p_data -> u.m_data -> find(sKey);
 	if (itmHash == u.p_data -> u.m_data -> end())
 	{
 		bCDTExist = false;
@@ -782,7 +782,7 @@ bool CDT::Exists(const STLW::string & sKey) const
 {
 	if (eValueType != HASH_VAL) { throw CDTAccessException(); }
 
-	Map::const_iterator itmHash = u.p_data -> u.m_data -> find(sKey);
+	Map::iterator itmHash = u.p_data -> u.m_data -> find(sKey);
 	if (itmHash == u.p_data -> u.m_data -> end()) { return false; }
 
 return true;
