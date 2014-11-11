@@ -271,7 +271,7 @@ CDT::ConstIterator CDT::Begin() const
 {
 	if (eValueType != HASH_VAL) { throw CDTAccessException(); }
 
-return ConstIterator(u.p_data -> u.m_data -> begin());
+return ConstIterator(Iterator(u.p_data -> u.m_data -> begin()));
 }
 
 //
@@ -281,7 +281,7 @@ CDT::ConstIterator CDT::End() const
 {
 	if (eValueType != HASH_VAL) { throw CDTAccessException(); }
 
-return ConstIterator(u.p_data -> u.m_data -> end());
+return ConstIterator(Iterator(u.p_data -> u.m_data -> end()));
 }
 
 //
@@ -291,7 +291,7 @@ CDT::ConstIterator CDT::Find(const STLW::string & sKey) const
 {
 	if (eValueType != HASH_VAL) { throw CDTAccessException(); }
 
-return ConstIterator(u.p_data -> u.m_data -> find(sKey));
+return ConstIterator(Iterator(u.p_data -> u.m_data -> find(sKey)));
 }
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
