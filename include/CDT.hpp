@@ -1768,70 +1768,12 @@ public:
 		virtual ~SortingComparator() throw();
 	};
 
-	// FWD
-	class CTPP2DECL ConstIterator;
-
 	/**
 	  @class Iterator CDT.hpp <CDT.hpp>
 	  @brief CDT[HASH] forward iterator
 	*/
-	class CTPP2DECL Iterator
-	{
-	private:
-		friend class CDT;
-		friend class ConstIterator;
 
-		/** Hash iterator */
-		CDT::Map::iterator itMap;
-
-		/**
-		  @brief Constructor
-		  @param itIMap - map iterator
-		*/
-		Iterator(CDT::Map::iterator itIMap);
-	public:
-		/**
-		  @brief Copy constructor
-		  @param oRhs - object to copy
-		*/
-		Iterator(const Iterator & oRhs);
-
-		/**
-		  @brief Operator =
-		  @param oRhs - object to copy
-		*/
-		Iterator & operator=(const Iterator & oRhs);
-
-		/**
-		  @brief Pre-increment operator ++
-		*/
-		Iterator & operator++();
-
-		/**
-		  @brief Post-increment operator ++
-		*/
-		Iterator operator++(int);
-
-		/**
-		  @brief Access operator
-		  @return Pair of key => value
-		*/
-		STLW::pair<const STLW::string, CDT> * operator->();
-
-		/**
-		  @brief Comparison operator
-		  @param oRhs - object to compare
-		  @return true if objects are equal
-		*/
-		bool operator ==(const Iterator & oRhs);
-
-		/**
-		  @brief Comparison operator
-		  @param oRhs - object to compare
-		  @return true if objects are NOT equal
-		*/
-		bool operator !=(const Iterator & oRhs);
-	};
+    typedef Map::iterator Iterator;
 
 	/**
 	  @brief Get iterator pointed to start of hash
@@ -1854,69 +1796,8 @@ public:
 	  @class ConstIterator CDT.hpp <CDT.hpp>
 	  @brief CDT[HASH] forward constant iterator
 	*/
-	class CTPP2DECL ConstIterator
-	{
-	private:
-		friend class CDT;
 
-		/** Hash iterator */
-		CDT::Map::const_iterator itMap;
-
-	public:
-		/**
-		  @brief Copy constructor
-		  @param oRhs - object to copy
-		*/
-		ConstIterator(const ConstIterator & oRhs);
-
-		/**
-		  @brief Type cast constructor
-		  @param oRhs - object to copy
-		*/
-		ConstIterator(const Iterator & oRhs);
-
-		/**
-		  @brief Operator =
-		  @param oRhs - object to copy
-		*/
-		ConstIterator & operator=(const ConstIterator & oRhs);
-
-		/**
-		  @brief Operator =
-		  @param oRhs - object to copy
-		*/
-		ConstIterator & operator=(const Iterator & oRhs);
-
-		/**
-		  @brief Pre-increment operator ++
-		*/
-		ConstIterator & operator++();
-
-		/**
-		  @brief Post-increment operator ++
-		*/
-		ConstIterator operator++(int);
-
-		/**
-		  @brief Access operator
-		  @return Pair of key => value
-		*/
-		const STLW::pair<const STLW::string, CDT> * operator->() const;
-
-		/**
-		  @brief Comparison operator
-		  @param oRhs - object to compare
-		  @return true if objects are equal
-		*/
-		bool operator ==(const ConstIterator & oRhs) const;
-
-		/**
-		  @brief Comparison operator
-		  @param oRhs - object to compare
-		  @return true if objects are NOT equal
-		*/
-		bool operator !=(const ConstIterator & oRhs) const;
-	};
+    typedef Map::const_iterator ConstIterator;
 
 	/**
 	  @brief Get constant iterator pointed to start of hash
