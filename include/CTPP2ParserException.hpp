@@ -56,12 +56,12 @@ public:
 	virtual CCHAR_P what() const throw();
 
 	/**
-	  @brief Get line where error ocured
+	  @brief Get line where error occurred
 	*/
 	virtual UINT_32 GetLine() const = 0;
 
 	/**
-	  @brief Get column where error ocured
+	  @brief Get column where error occurred
 	*/
 	virtual UINT_32 GetLinePos() const = 0;
 
@@ -82,8 +82,8 @@ public:
 	/**
 	  @brief Constructor
 	  @param szIReason - error description
-	  @param iILine - line where error ocured
-	  @param iIPos - column where error ocured
+	  @param iILine - line where error occurred
+	  @param iIPos - column where error occurred
 	*/
 	CTPPParserSyntaxError(CCHAR_P        szIReason,
 	                      const UINT_32  iILine,
@@ -93,12 +93,12 @@ public:
 	CCHAR_P what() const throw();
 
 	/**
-	  @brief Get line where error ocured
+	  @brief Get line where error occurred
 	*/
 	UINT_32 GetLine() const;
 
 	/**
-	  @brief Get column where error ocured
+	  @brief Get column where error occurred
 	*/
 	UINT_32 GetLinePos() const;
 
@@ -125,8 +125,8 @@ public:
 	  @brief Constructor
 	  @param szIExpected - expected opeartor
 	  @param szIFound - opeartor that really found in stream
-	  @param iILine - line where error ocured
-	  @param iIPos - column where error ocured
+	  @param iILine - line where error occurred
+	  @param iIPos - column where error occurred
 	*/
 	CTPPParserOperatorsMismatch(CCHAR_P        szIExpected,
 	                            CCHAR_P        szIFound,
@@ -143,12 +143,12 @@ public:
 	CCHAR_P Found() const;
 
 	/**
-	  @brief Get line where error ocured
+	  @brief Get line where error occurred
 	*/
 	UINT_32 GetLine() const;
 
 	/**
-	  @brief Get column where error ocured
+	  @brief Get column where error occurred
 	*/
 	UINT_32 GetLinePos() const;
 
