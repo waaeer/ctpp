@@ -579,12 +579,20 @@ DumpBuffer & DumpJSONString(DumpBuffer & sResult, const STLW::string & sSource, 
     INT_32 iSize = sSource.size();
     INT_32 iOffset = 0;
 
+    static unsigned char mask[] = {192, 224, 240}; 
+
+    //JSON works with utf8 only!
     while (iSize--)
     {
         const UCHAR_8 uCH = sSource[iPos];
         const CHAR_8 * sEscaped = NULL;
         bool bFound = false;
-
+	UCHAR_8 c_bytes[4]; 
+	UINT_32 unicode;
+	int utf_size;
+	utf_size = (uCH & mask[2])==mask[2] ? 4 : (uCH & mask[1]) == mask[1] ? 3 : (uCH & mask[0]) == mask[0] ?  2  : 1;
+	unicode  = utf_size == 1 ? uCH : utf_size == 2 ? (uCH & 31) : utf_size == 3 ? (uCH & 15 ) : ( uCH & 7 );
+	//single_byte chars
         switch (uCH)
         {
             case '"':
@@ -650,6 +658,24 @@ DumpBuffer & DumpJSONString(DumpBuffer & sResult, const STLW::string & sSource, 
 			sResult.Write(szBuffer, 6);
             iOffset = iPos + 1;
         }
+	else if (utf_size > 1 ) { 
+	    int i;
+            memset(c_bytes, 0, 4);
+	    c_bytes[0] = uCH;
+	    for (i=1; i < utf_size; i++) { 
+		if(iSize-- == 0) { break; } // broken UTF-8 string; what to do? simply return now 
+                c_bytes[i] = sSource[++iPos];
+		if(!c_bytes[i] || (c_bytes[i] & 0xC0) != 0x80) { break; }  // malformed utf-8
+		unicode = (unicode << 6) | (c_bytes[i] & 0x3F);
+            }
+	    if(c_bytes[0] == 0xE2 && c_bytes[1] == 0x80 && (c_bytes[2] == 0xA8 || c_bytes[2] == 0xA9)) { //2028 unicode line separator, 29 paragraph separator
+		CHAR_8 szBuffer[7] = { '\0' };
+		if (iPos - iOffset > 0) { sResult.Write(sSource.c_str() + iOffset, iPos - 2 - iOffset); }
+		snprintf(szBuffer, 7, "\\u%04x",  unicode);
+		sResult.Write(szBuffer, 6);
+		iOffset = iPos + 1;
+	    }
+	}
         ++iPos;
     }
 
