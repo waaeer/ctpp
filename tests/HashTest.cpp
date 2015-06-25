@@ -49,6 +49,13 @@ int main(void)
 	oHashTable.Put("123", 3, 34567);
 	oHashTable.Put("1234", 4, 45678);
 	oHashTable.Put("12345", 5, 56789);
+	
+	// Try overwriting entries
+	oHashTable.Put("1", 1, 98765);
+	oHashTable.Put("12", 2, 87486);
+	oHashTable.Put("123", 3, 976547);
+	oHashTable.Put("1234", 4, 314254);
+	oHashTable.Put("12345", 5, 1828189);
 
 
 	fprintf(stdout, "1 => %d\n", INT_32(oHashTable.Get("1", 1)));
@@ -56,7 +63,6 @@ int main(void)
 	fprintf(stdout, "123 => %d\n", INT_32(oHashTable.Get("123", 3)));
 	fprintf(stdout, "1234 => %d\n", INT_32(oHashTable.Get("1234", 4)));
 	fprintf(stdout, "12345 => %d\n", INT_32(oHashTable.Get("12345", 5)));
-
 
 	// make valgrind happy
 	fclose(stdin);

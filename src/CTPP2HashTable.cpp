@@ -33,6 +33,8 @@
 #include "CTPP2HashTable.hpp"
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 namespace CTPP // C++ Template Engine
 {
@@ -117,7 +119,7 @@ HashTable::HashTable(): iPower(1)
 	for(; iPos < iNewElements; ++iPos)
 	{
 		HashElement & oNewElement = aElements[iPos];
-
+		oNewElement.key   = NULL;
 		oNewElement.hash  = (UINT_64)-1;
 		oNewElement.value = (UINT_64)-1;
 	}
@@ -165,17 +167,28 @@ UINT_32 HashTable::Put(CCHAR_P        szKey,
 		HashElement & oElement = aElements[iPos];
 
 		// Duplicate!
-		if (oElement.hash == iHash) { return (UINT_32)-1; }
+		if (oElement.hash == iHash) { 
+			// is exact duplicate ?
+			if(!strcmp(szKey, oElement.key)) { // yes, exact! Replace
+				oElement.value = iValue;
+				return 0;
+			} else { // Need to Resize!
+				Resize();		
+			}
 
-		// Resize hash
-		if (oElement.value != (UINT_64)-1) { Resize(); }
-		else
-		{
-			++iUsed;
-			oElement.hash  = iHash;
-			oElement.value = iValue;
-			return 0;
-		}
+		} else { 
+
+			// Resize hash
+			if (oElement.value != (UINT_64)-1) { Resize(); }
+			else
+			{
+				++iUsed;
+				oElement.key   = strdup(szKey); 
+				oElement.hash  = iHash;
+				oElement.value = iValue;
+				return 0;
+			}
+		} 
 	}
 
 // Make compiler happy
@@ -188,7 +201,6 @@ return (UINT_32)-1;
 void HashTable::Resize()
 {
 	const UINT_32 iOldElements = 1 << iPower;
-
 	++iPower;
 	const UINT_32 iNewElements = 1 << iPower;
 
@@ -201,6 +213,7 @@ void HashTable::Resize()
 	{
 		HashElement & oNewElement = aTMP[iPos];
 
+		oNewElement.key   = NULL;
 		oNewElement.hash  = (UINT_64)-1;
 		oNewElement.value = (UINT_64)-1;
 	}
@@ -216,6 +229,7 @@ void HashTable::Resize()
 
 			HashElement & oNewElement = aTMP[iNewPos];
 
+			oNewElement.key   = oOldElement.key;
 			oNewElement.hash  = oOldElement.hash;
 			oNewElement.value = oOldElement.value;
 		}
@@ -230,6 +244,12 @@ void HashTable::Resize()
 //
 HashTable::~HashTable() throw()
 {
+	UINT_32 iNElements = 1<< iPower;
+	for(UINT_32 iPos = 0; iPos < iNElements; iPos++) 
+	{
+		CHAR_P key = aElements[iPos].key; 
+		if(key)  free(key);
+	}
 	delete [] aElements;
 }
 

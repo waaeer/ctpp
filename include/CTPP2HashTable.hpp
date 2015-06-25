@@ -48,6 +48,7 @@ namespace CTPP // C++ Template Engine
 */
 struct HashElement
 {
+	CHAR_P key;
 	/** Hash value */
 	UINT_64  hash;
 	/** Data length */

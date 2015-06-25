@@ -2341,10 +2341,6 @@ CCharIterator CTPP2Parser::BlockOperator(CCharIterator szData, CCharIterator szE
 	sTMP = BlockArgs(sTMP, szEnd);
 	if (sTMP == NULL) { sTMP = szData; }
 
-	if (mBlockArgSizes.find(sBlockName) != mBlockArgSizes.end())
-	{
-		throw CTPPParserSyntaxError("redifintion of block", sTMP.GetLine(), sTMP.GetLinePos());
-	}
 	mBlockArgSizes[sBlockName] = mCurrentBlock.size();
 
 	// Skip white space
