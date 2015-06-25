@@ -1426,11 +1426,11 @@ fprintf(stderr, "0x%08X MOVIREG   %cR, %cR[%cR] ", iIP, CHAR_8((iDstReg >> 8) + 
                                             {
                                                 oItVal["__first__"] = 1;
                                             }
-                                            else if (UINT_32(iIdx + 1) == oRegs[iSrcReg].Size())
+                                            if (UINT_32(iIdx + 1) == oRegs[iSrcReg].Size() )
                                             {
                                                 oItVal["__last__"] = 1;
                                             }
-                                            else
+                                            else if (iIdx > 0) 
                                             {
                                                 oItVal["__inner__"] = 1;
                                             }
