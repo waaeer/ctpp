@@ -160,7 +160,9 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 	else if (strcasecmp("version",                                szHandler) == 0) { return new FnVersion();      }
 	else if (strcasecmp("wmlescape",                              szHandler) == 0) { return new FnWMLEscape();    }
 	else if (strcasecmp("xmlescape",                              szHandler) == 0) { return new FnXMLEscape();    }
-
+#ifdef ICU_SUPPORT
+        else if (strcasecmp("icu_format_date", 			      szHandler) == 0) { return new FnICUFormatDate();}
+#endif
 #ifdef  PCRE_SUPPORT
 //	else if (strcasecmp("re_m",                                   szHandler) == 0) { return new FnReM();          }
 #endif

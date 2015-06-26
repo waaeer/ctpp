@@ -65,6 +65,10 @@
 #include "FnIconv.hpp"
 #endif // ICONV_SUPPORT
 
+#ifdef ICU_SUPPORT
+#include "FnICUFormatDate.hpp"
+#endif
+
 #include "FnInSet.hpp"
 #include "FnInArray.hpp"
 #include "FnJSONEscape.hpp"

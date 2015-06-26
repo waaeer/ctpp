@@ -72,6 +72,8 @@
 
 #cmakedefine CTPP_MAX_TEMPLATE_RECURSION_DEPTH ${CTPP_MAX_TEMPLATE_RECURSION_DEPTH}
 
+#cmakedefine ICU_SUPPORT         1
+
 #cmakedefine ICONV_SUPPORT       1
 
 #cmakedefine ICONV_DISCARD_ILSEQ 1

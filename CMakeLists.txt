@@ -39,6 +39,7 @@ SET(CTPP_MAX_TEMPLATE_RECURSION_DEPTH 1024)
 #
 OPTION(MD5_SUPPORT         "Enable md5 support [default: ON]"                   ON)
 OPTION(ICONV_SUPPORT       "Enable iconv support [default: ON]"                 ON)
+OPTION(ICU_SUPPORT         "Enable icu support [default: ON]"			ON)
 
 # ################################################################################
 # Check Includes
@@ -259,6 +260,48 @@ IF (${MD5_SUPPORT} MATCHES "ON")
     ENDIF (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 ENDIF (${MD5_SUPPORT} MATCHES "ON")
 
+# ICU library support
+IF (${ICU_SUPPORT} MATCHES "ON")
+    FIND_PATH(ICU_INCLUDE unicode/smpdtfmt.h PATHS /opt/include
+                                          /usr/local/include
+                                          /usr/include
+              DOC "Path where the icu header files can be found")
+    IF (ICU_INCLUDE)
+        INCLUDE_DIRECTORIES(${ICU_INCLUDE})
+
+	FIND_LIBRARY(ICUI18N_LIBRARY NAMES icui18n PATHS /opt/lib /usr/local/lib /usr/lib /lib
+		DOC "Path where the icu libraries can be found")
+	IF (ICUI18N_LIBRARY)
+		SET(PROJECT_LIBS "${PROJECT_LIBS} icui18n")
+		MESSAGE(STATUS "#### INFO: Found libicui18n.so")
+	ELSE (ICUI18N_LIBRARY)
+		MESSAGE(STATUS "#### ERROR: Cannot find libicui18n.so, aborting")
+	ENDIF (ICUI18N_LIBRARY)
+	FIND_LIBRARY(ICUUC_LIBRARY NAMES icuuc PATHS /opt/lib
+	/usr/local/lib /usr/lib /lib
+                DOC "Path where the icu libraries can be found")
+        IF (ICUUC_LIBRARY)
+                SET(PROJECT_LIBS "${PROJECT_LIBS} icuuc")
+                MESSAGE(STATUS "#### INFO: Found libicuuc.so")
+        ELSE (ICUUC_LIBRARY)
+                MESSAGE(STATUS "#### ERROR: Cannot find libicuuc.so, aborting")
+        ENDIF (ICUUC_LIBRARY)
+
+
+
+
+    ELSE (ICU_INCLUDE)
+
+        SET(ICU_SUPPORT "")
+        MESSAGE(STATUS "#### WARNING: ICU support disabled: unicode/smpdtfmt.h not found")
+
+    ENDIF (ICU_INCLUDE)
+
+
+
+ENDIF (${ICU_SUPPORT} MATCHES "ON")
+
+
 #
 # Iconv converter support
 #
@@ -276,7 +319,7 @@ IF (${ICONV_SUPPORT} MATCHES "ON")
                                                          /opt/lib
                                                          /usr/lib
                                                          /usr/local/lib
-                         DOC "Path where the openssl libraries can be found")
+                         DOC "Path where the iconv library can be found")
             IF (ICONV_LIBRARY)
                 SET(PROJECT_LIBS "${PROJECT_LIBS} iconv")
             ELSE (ICONV_LIBRARY)
@@ -304,6 +347,8 @@ INCLUDE_DIRECTORIES(include/functions)
 
 IF("${CMAKE_COMPILER_IS_GNUCXX}" MATCHES "1")
 
+    SET(CXX_FLAGS       " ${CXX_FLAGS} --std=gnu++11 ")
+ 
     SET(CMAKE_CXX_PARAMS      " --param large-function-growth=5000 --param inline-unit-growth=600 -finline-limit=2000 ")
 
     SET(CMAKE_CXX_WARN_FLAGS  " -Wall -pedantic -Wno-long-long -Wno-inline -finline-functions ")
@@ -408,6 +453,7 @@ SET(LIBSRCS
             src/functions/FnHrefParam.cpp
             src/functions/FnHostname.cpp
             src/functions/FnIconv.cpp
+	    src/functions/FnICUFormatDate.cpp
             src/functions/FnInSet.cpp
             src/functions/FnInArray.cpp
             src/functions/FnJSONEscape.cpp
@@ -450,7 +496,7 @@ IF(DEBUG_MODE MATCHES "ON")
     SET_TARGET_PROPERTIES(ctpp2 PROPERTIES LINK_FLAGS -Wl,-lgcov)
 ENDIF(DEBUG_MODE MATCHES "ON")
 
-TARGET_LINK_LIBRARIES(ctpp2 ${MD5_LIBRARY} ${ICONV_LIBRARY} ${WS2_32_LIBRARY})
+TARGET_LINK_LIBRARIES(ctpp2 ${MD5_LIBRARY} ${ICONV_LIBRARY} ${WS2_32_LIBRARY} ${ICUI18N_LIBRARY} ${ICUUC_LIBRARY})
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     SET_TARGET_PROPERTIES(ctpp2 PROPERTIES COMPILE_DEFINITIONS CTPP2_DLL)
