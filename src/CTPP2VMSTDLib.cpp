@@ -206,6 +206,9 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 #ifdef  ICONV_SUPPORT
 	"iconv",
 #endif
+#ifdef  ICU_SUPPORT
+        "icu_format_date",
+#endif
 	"in_set",
 	"in_array",
 	"jsonescape",

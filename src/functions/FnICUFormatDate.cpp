@@ -42,7 +42,18 @@ INT_32 FnICUFormatDate::Handler(CTPP::CDT          * aArguments,
 		
 		} else {
 			std::string isodate = aArguments[0].GetString();
-			isodate = std::regex_replace (isodate,std::regex("\\.\\d+"),std::string(""));
+// does not work in gc < 4.9 
+//			isodate = std::regex_replace (isodate,std::regex("\\.\\d+"),std::string(""));
+// so do it manually 
+                        size_t dot_pos = isodate.find('.');
+                        if( dot_pos != std::string::npos) { //found
+                                size_t last_digit;
+                                for( last_digit = dot_pos+1; last_digit < isodate.length(); last_digit++) { 
+                                        if(!isdigit(isodate[last_digit])) break;
+                                }
+                                isodate = isodate.substr(0,dot_pos) +  isodate.substr(last_digit);
+                        }
+//
 			ParsePosition pp(0);
 			date = parser->parse(UnicodeString(isodate.c_str()), pp);
 		}
