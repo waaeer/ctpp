@@ -12,7 +12,8 @@ namespace CTPP
 FnICUFormatDate::FnICUFormatDate() 
 { 
     UErrorCode err = U_ZERO_ERROR;
-	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ssZZZZZ")	, err);
+//	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ssZZZZZ")	, err);
+	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ss")	, err);
 
 }
 
