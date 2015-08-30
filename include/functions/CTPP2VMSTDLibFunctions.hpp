@@ -89,6 +89,8 @@
 #include "FnNumFormat.hpp"
 #include "FnObjDump.hpp"
 #include "FnRandom.hpp"
+#include "FnRussianPlural.hpp"
+#include "FnRussianSpellOut.hpp"
 #include "FnSize.hpp"
 #include "FnSprintf.hpp"
 #include "FnSubstring.hpp"

@@ -167,7 +167,8 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 //	else if (strcasecmp("re_m",                                   szHandler) == 0) { return new FnReM();          }
 #endif
 //	else if (strcasecmp("bb_code",                                szHandler) == 0) { return new FnBBCode();       }
-
+		else if (strcasecmp("russian_plural", 			      szHandler) == 0) { return new FnRussianPlural();}
+		else if (strcasecmp("russian_spellout", 			  szHandler) == 0) { return new FnRussianSpellOut();}
 return NULL;
 }
 
@@ -227,6 +228,8 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 	"num_format",
 	"obj_dump",
 	"random",
+	"russian_plural",
+	"russian_spellout",
 	"size",
 	"sprintf",
 	"substr",

@@ -470,6 +470,8 @@ SET(LIBSRCS
             src/functions/FnNumFormat.cpp
             src/functions/FnObjDump.cpp
             src/functions/FnRandom.cpp
+            src/functions/FnRussianPlural.cpp
+            src/functions/FnRussianSpellOut.cpp
             src/functions/FnSize.cpp
             src/functions/FnSprintf.cpp
             src/functions/FnSubstring.cpp
