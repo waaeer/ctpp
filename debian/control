@@ -1,7 +1,7 @@
 Source: ctpp2
 Section: unknown
 Priority: extra
-Maintainer: Andrei V. Shetuhin <reki@reki.ru>
+Maintainer: Ivan E. Panchenko <wao@mail.ru>
 Build-Depends: debhelper (>= 5), libssl-dev (>= 0.9.7), cmake (>= 2.6), python-docutils
 Standards-Version: 3.7.2
 

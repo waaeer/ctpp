@@ -13,6 +13,7 @@ SET(CTPP_VERSION         "${CTPP_VERSION_MAJOR}.${CTPP_VERSION_MINOR}.${CTPP_VER
 SET(CTPP_IDENT           "Dzoraget")
 SET(CTPP_MASTER_SITE_URL "http://ctpp.havoc.ru/")
 
+SET(CMAKE_INSTALL_PREFIX "/usr")
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0 FATAL_ERROR)
 
 OPTION(DEBUG_MODE          "Enable debug output [default: OFF]"                 OFF)
@@ -39,7 +40,7 @@ SET(CTPP_MAX_TEMPLATE_RECURSION_DEPTH 1024)
 #
 OPTION(MD5_SUPPORT         "Enable md5 support [default: ON]"                   ON)
 OPTION(ICONV_SUPPORT       "Enable iconv support [default: ON]"                 ON)
-OPTION(ICU_SUPPORT         "Enable icu support [default: ON]"			ON)
+OPTION(ICU_SUPPORT         "Enable icu support [default: ON]"                   ON)
 
 # ################################################################################
 # Check Includes
@@ -347,7 +348,7 @@ INCLUDE_DIRECTORIES(include/functions)
 
 IF("${CMAKE_COMPILER_IS_GNUCXX}" MATCHES "1")
 
-    SET(CXX_FLAGS       " ${CXX_FLAGS} --std=gnu++11 ")
+    SET(CXX_FLAGS       " ${CXX_FLAGS} --std=gnu++0x ")
  
     SET(CMAKE_CXX_PARAMS      " --param large-function-growth=5000 --param inline-unit-growth=600 -finline-limit=2000 ")
 
@@ -962,4 +963,18 @@ fi
 
 ENDIF("${CMAKE_SYSTEM_NAME}" MATCHES "Windows")
 
+
+INCLUDE(InstallRequiredSystemLibraries)
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Fast crossplatform template engine")
+SET(CPACK_PACKAGE_CONTACT "wao@mail.ru")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Ivan E.Panchenko")
+SET(CPACK_PACKAGE_VERSION_MAJOR "2")
+SET(CPACK_PACKAGE_VERSION_MINOR "8")
+SET(CPACK_PACKAGE_VERSION_PATCH "3")
+
+INCLUDE(CPack)
+
 # End.
+
+
+
