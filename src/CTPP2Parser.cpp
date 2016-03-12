@@ -2279,8 +2279,13 @@ CCharIterator CTPP2Parser::CommentOperator(CCharIterator szData, CCharIterator s
 				if (oOperatorType == TMPL_comment)
 				{
 					szTMP = IsWhiteSpace(szTMP, szEnd, 0);
+					const bool bRemoveTrailingNewLine = CheckTrailingFlag(szTMP, szEnd);
 					if (*szTMP != TMPL_CLOSE_SYMBOL) { throw CTPPParserSyntaxError("expected '>'", szTMP.GetLine(), szTMP.GetLinePos()); }
 					++szTMP;
+
+					// Remove trailing newline(s), if need
+					if (bRemoveTrailingNewLine || bVerboseMode) { RemoveTrailingNewLines(szTMP, szEnd); }
+
 					return szTMP;
 				}
 				szData = szTMP;
