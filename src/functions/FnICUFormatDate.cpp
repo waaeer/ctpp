@@ -13,7 +13,7 @@ FnICUFormatDate::FnICUFormatDate()
 { 
     UErrorCode err = U_ZERO_ERROR;
 //	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ssZZZZZ")	, err);
-	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ss")	, err);
+	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'HH:mm:ss")	, err);
 
 }
 
@@ -63,6 +63,7 @@ INT_32 FnICUFormatDate::Handler(CTPP::CDT          * aArguments,
 			date = parser->parse(UnicodeString(isodate.c_str()), pp);
 		}
 	}
+
 	UErrorCode err = U_ZERO_ERROR;	
 	if(locale) { 
 		SimpleDateFormat formatter(UnicodeString(aArguments[iFormat].GetString().c_str())	, *locale, err);
