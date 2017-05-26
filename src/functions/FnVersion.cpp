@@ -51,13 +51,13 @@ INT_32 FnVersion::Handler(CDT            * aArguments,
 {
 	if (iArgNum == 1 && strcasecmp("full", aArguments[0].GetString().c_str()) == 0)
 	{
-		oCDTRetVal = "Engine: CTPP2 engine v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2004 - 2012 CTPP Dev. Team;\n"
-		             "RuntimeLibrary: CTPP Standard Library v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2007 - 2012 CTPP Dev. Team;\n"
+		oCDTRetVal = "Engine: CTPP2 engine v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2004 - 2012 CTPP Dev. Team; -2017 WAO\n"
+		             "RuntimeLibrary: CTPP Standard Library v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2007 - 2012 CTPP Dev. Team; -2017 WAO\n"
 		             "License: BSD-like, see " CTPP_MASTER_SITE_URL ";";
 	}
 	else
 	{
-		oCDTRetVal = "CTPP2 engine v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2004 - 2012 CTPP Dev. Team";
+		oCDTRetVal = "CTPP2 engine v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2004 - 2012 CTPP Dev. Team; -2017 WAO";
 	}
 
 return 0;

@@ -10,7 +10,7 @@ SET(CTPP_VERSION_MINOR 8)
 SET(CTPP_VERSION_PATCH 4)
 
 SET(CTPP_VERSION         "${CTPP_VERSION_MAJOR}.${CTPP_VERSION_MINOR}.${CTPP_VERSION_PATCH}")
-SET(CTPP_IDENT           "Dzoraget")
+SET(CTPP_IDENT           "Elk")
 SET(CTPP_MASTER_SITE_URL "http://ctpp.havoc.ru/")
 
 SET(CMAKE_INSTALL_PREFIX "/usr")
@@ -462,6 +462,7 @@ SET(LIBSRCS
             src/functions/FnList.cpp
             src/functions/FnListElement.cpp
             src/functions/FnLog.cpp
+            src/functions/FnMBReplace.cpp
             src/functions/FnMBSize.cpp
             src/functions/FnMBSubstring.cpp
             src/functions/FnMBTruncate.cpp
@@ -471,6 +472,7 @@ SET(LIBSRCS
             src/functions/FnNumFormat.cpp
             src/functions/FnObjDump.cpp
             src/functions/FnRandom.cpp
+            src/functions/FnReplace.cpp
             src/functions/FnRussianPlural.cpp
             src/functions/FnRussianSpellOut.cpp
             src/functions/FnSize.cpp

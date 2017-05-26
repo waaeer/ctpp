@@ -1,4 +1,4 @@
-/*-
+/*
  * Copyright (c) 2004 - 2011 CTPP Team
  *
  * Redistribution and use in source and binary forms, with or without
@@ -145,6 +145,9 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 #endif
 	else if (strcasecmp("min",                                    szHandler) == 0) { return new FnMin();          }
 	else if (strcasecmp("max",                                    szHandler) == 0) { return new FnMax();          }
+#ifdef ICU_SUPPORT
+	else if (strcasecmp("mb_replace",                             szHandler) == 0) { return new FnMBReplace();    }
+#endif
 	else if (strcasecmp("mb_size",                                szHandler) == 0) { return new FnMBSize();       }
 	else if (strcasecmp("mb_substr",                              szHandler) == 0) { return new FnMBSubstring();  }
 	else if (strcasecmp("mb_truncate",                            szHandler) == 0) { return new FnMBTruncate();   }
@@ -154,6 +157,7 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 	else if (strcasecmp("size",                                   szHandler) == 0) { return new FnSize();         }
 	else if (strcasecmp("sprintf",                                szHandler) == 0) { return new FnSprintf();      }
 	else if (strcasecmp("substr",                                 szHandler) == 0) { return new FnSubstring();    }
+	else if (strcasecmp("replace",                                szHandler) == 0) { return new FnReplace();   	  }
 	else if (strcasecmp("truncate",                               szHandler) == 0) { return new FnTruncate();     }
 	else if (strcasecmp("uriescape",                              szHandler) == 0) { return new FnURIEscape();    }
 	else if (strcasecmp("urlescape",                              szHandler) == 0) { return new FnURLEscape();    }
@@ -222,12 +226,16 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 #endif
 	"min",
 	"max",
+#ifdef  ICU_SUPPORT
+	"mb_replace",
+#endif
 	"mb_size",
 	"mb_substr",
 	"mb_truncate",
 	"num_format",
 	"obj_dump",
 	"random",
+	"replace",
 	"russian_plural",
 	"russian_spellout",
 	"size",

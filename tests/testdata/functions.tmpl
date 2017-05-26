@@ -46,6 +46,7 @@ LOG:                         <TMPL_var LOG("101", "10")>
 LOG:                         <TMPL_var LOG(1024, 2)>
 LOG:                         <TMPL_var LOG(2.71828182846)>
 
+MB_REPLACE:					 <TMPL_var MB_REPLACE("Hello Детка","Де", "ШАШКИ")>
 MB_SIZE:                     <TMPL_var MB_SIZE("Hello, World!\nПривет, мир!")>
 
 MB_SUBSTR:                   <TMPL_var MB_SUBSTR("Hello, World! Привет, мир!", 14)>
@@ -60,6 +61,8 @@ MIN:                         <TMPL_var MIN(1, 3)>
 MAX:                         <TMPL_var MAX(1, 3)>
 
 NUM_FORMAT:                  <TMPL_var NUM_FORMAT(1234567890, ' ')>
+
+REPLACE:					 <TMPL_var REPLACE("Window functions running on windows","dow", "fridge")>
 
 SIZE:                        <TMPL_var SIZE(array_int)>
 SIZE:                        <TMPL_var SIZE(hash)>
