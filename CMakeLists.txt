@@ -661,6 +661,17 @@ IF (${ICONV_SUPPORT} MATCHES "ON")
     ENDIF (DIFF_EXECUTABLE)
 ENDIF (${ICONV_SUPPORT} MATCHES "ON")
 
+IF (${ICU_SUPPORT} MATCHES "ON")
+	ADD_TEST(Function_icu_format_date_C	ctpp2c ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_icu_format_date.tmpl Function_icu_format_date.ct2)
+	ADD_TEST(Function_icu_format_date_R ctpp2vm Function_icu_format_date.ct2 ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/testdata.json Function_icu_format_date.out)
+	SET_TESTS_PROPERTIES(Function_icu_format_date_R PROPERTIES DEPENDS Function_icu_format_date_C)
+	IF (DIFF_EXECUTABLE)
+		ADD_TEST(Function_icu_format_date_D		${DIFF_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_icu_format_date.out Function_icu_format_date.out)
+		SET_TESTS_PROPERTIES(Function_icu_format_date_D  PROPERTIES DEPENDS Function_icu_format_date_R)
+	ENDIF (DIFF_EXECUTABLE)
+ENDIF (${ICU_SUPPORT} MATCHES "ON")
+
+
 ADD_TEST(Function_gettext_C             ctpp2c ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_gettext.tmpl Function_gettext.ct2)
 ADD_TEST(Function_gettext_R             ctpp2vm Function_gettext.ct2 ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/testdata.json Function_gettext.out ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/test.mo)
 SET_TESTS_PROPERTIES(Function_gettext_R PROPERTIES DEPENDS Function_gettext_C)

@@ -17,7 +17,8 @@ class FnICUFormatDate:
 {
 private:
 
-	SimpleDateFormat *parser;
+	SimpleDateFormat *tparser;
+	SimpleDateFormat *dparser;
 
 public:
 	FnICUFormatDate();

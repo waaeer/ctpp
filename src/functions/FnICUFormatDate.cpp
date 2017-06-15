@@ -13,13 +13,14 @@ FnICUFormatDate::FnICUFormatDate()
 { 
     UErrorCode err = U_ZERO_ERROR;
 //	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ssZZZZZ")	, err);
-	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'HH:mm:ss")	, err);
-
+	tparser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'HH:mm:ss")	, err);
+	dparser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd")	, err);
 }
 
 // Деструктор
 FnICUFormatDate::~FnICUFormatDate() throw() { 
-	delete parser;
+	delete tparser;
+	delete dparser;
 }
 
 
@@ -60,7 +61,11 @@ INT_32 FnICUFormatDate::Handler(CTPP::CDT          * aArguments,
 			}
 //
 			ParsePosition pp(0);
-			date = parser->parse(UnicodeString(isodate.c_str()), pp);
+			date = tparser->parse(UnicodeString(isodate.c_str()), pp);
+			if(!date) { 
+				pp=0;
+				date = dparser->parse(UnicodeString(isodate.c_str()), pp);
+			}
 		}
 	}
 
