@@ -5,6 +5,10 @@ AVG(g):                      1.81712059283
 AVG(h):                      1.63636363636
 AVG(q):                      2.16024689947
 
+ATTR_IN_ARRAY:               1
+ATTR_IN_ARRAY:               0
+ATTR_IN_ARRAY:               0
+
 BASE64_DECODE/BASE64_ENCODE: Hello, World
 
 CAST(int):                   1

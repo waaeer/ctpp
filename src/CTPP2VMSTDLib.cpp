@@ -109,6 +109,7 @@ CCHAR_P * STDLibInitializer::GetFnList() { return aSTDFNList; }
 SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 {
 	if      (strcasecmp(CTPP2_INT_HANDLER_PREFIX "_emitter",      szHandler) == 0) { return new FnEmitter();      }
+	else if (strcasecmp("attr_in_array",                          szHandler) == 0) { return new FnAttrInArray();  }
 	else if (strcasecmp("avg",                                    szHandler) == 0) { return new FnAvg();          }
 	else if (strcasecmp("base64_encode",                          szHandler) == 0) { return new FnBase64Encode(); }
 	else if (strcasecmp("base64_decode",                          szHandler) == 0) { return new FnBase64Decode(); }
@@ -188,6 +189,7 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 {
 	CTPP2_INT_HANDLER_PREFIX "_emitter",
 	"avg",
+	"attr_in_array",
 	"base64_encode",
 	"base64_decode",
 	"cast",

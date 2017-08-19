@@ -435,6 +435,7 @@ SET(LIBSRCS
             src/CTPP2GetText.cpp
 
             src/functions/FnAvg.cpp
+            src/functions/FnAttrInArray.cpp
             src/functions/FnBase64Decode.cpp
             src/functions/FnBase64Encode.cpp
             src/functions/FnCast.cpp

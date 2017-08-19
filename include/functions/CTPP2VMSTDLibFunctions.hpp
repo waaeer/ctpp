@@ -38,6 +38,7 @@
 */
 
 #include "FnAvg.hpp"
+#include "FnAttrInArray.hpp"
 #include "FnBase64Decode.hpp"
 #include "FnBase64Encode.hpp"
 #include "FnCast.hpp"
