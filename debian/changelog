@@ -1,3 +1,12 @@
+ctpp2 (2.8.4) unstable; urgency=low
+  * Added ATTR_IN_ARRAY(), ICU_FORMAT_DATE(), REPLACE(), RUSSIAN_PLURAL(), 
+    RUSSIAN_SPELLOUT()
+  * Fixed escaping utf-8 strings
+  * made possible removing trailing newline in comment tag: </TMPL_comment->
+  * loop first/last bug fix
+
+ -- Ivan Panchenko <wao@mail.ru> Sat, 16 Dec 2017 10:12:00 +0300
+
 ctpp2 (2.8.3) unstable; urgency=low
 
   * Returned curly brakets as an alias for square ones.
