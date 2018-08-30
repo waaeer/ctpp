@@ -69,6 +69,7 @@ INT_32 FnDateAdd::Handler(CTPP::CDT          * aArguments,
 			if     (!strncmp(next,"month",5)) field = UCAL_MONTH;
 			else if(!strncmp(next,"week" ,4)) field = UCAL_WEEK_OF_YEAR;
 			else if(!strncmp(next,"day"  ,3)) field = UCAL_DATE;
+			else if(!strncmp(next,"year" ,4)) field = UCAL_YEAR;
 			else n = 0;
 		} else { 
 			n = 0;
