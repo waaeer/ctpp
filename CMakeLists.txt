@@ -24,7 +24,7 @@ OPTION(ICONV_DISCARD_ILSEQ "Discard illegal sequence and continue (iconv) [defau
 OPTION(ICONV_TRANSLITERATE "Enable transliteration in the conversion (iconv) [default: ON]" ON)
 
 # Build optimized code for following CPU (default i386)
-SET(CPU_TUNE               "i686")
+# SET(CPU_TUNE               "i686")
 
 # Floating point precision for formatting output variables
 SET(CTPP_FLOAT_PRECISION   12)
