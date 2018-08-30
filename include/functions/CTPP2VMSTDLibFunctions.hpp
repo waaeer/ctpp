@@ -68,6 +68,7 @@
 
 #ifdef ICU_SUPPORT
 #include "FnICUFormatDate.hpp"
+#include "FnDateAdd.hpp"
 #endif
 
 #include "FnInSet.hpp"

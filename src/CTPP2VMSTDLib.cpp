@@ -167,6 +167,7 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 	else if (strcasecmp("xmlescape",                              szHandler) == 0) { return new FnXMLEscape();    }
 #ifdef ICU_SUPPORT
         else if (strcasecmp("icu_format_date", 			      szHandler) == 0) { return new FnICUFormatDate();}
+        else if (strcasecmp("date_add", 			      	  szHandler) == 0) { return new FnDateAdd();}
 #endif
 #ifdef  PCRE_SUPPORT
 //	else if (strcasecmp("re_m",                                   szHandler) == 0) { return new FnReM();          }
@@ -215,6 +216,7 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 #endif
 #ifdef  ICU_SUPPORT
         "icu_format_date",
+		"date_add",
 #endif
 	"in_set",
 	"in_array",

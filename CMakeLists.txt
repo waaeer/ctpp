@@ -24,7 +24,7 @@ OPTION(ICONV_DISCARD_ILSEQ "Discard illegal sequence and continue (iconv) [defau
 OPTION(ICONV_TRANSLITERATE "Enable transliteration in the conversion (iconv) [default: ON]" ON)
 
 # Build optimized code for following CPU (default i386)
-#SET(CPU_TUNE               "i686")
+SET(CPU_TUNE               "i686")
 
 # Floating point precision for formatting output variables
 SET(CTPP_FLOAT_PRECISION   12)
@@ -441,6 +441,7 @@ SET(LIBSRCS
             src/functions/FnCast.cpp
             src/functions/FnConcat.cpp
             src/functions/FnContext.cpp
+		src/functions/FnDateAdd.cpp
             src/functions/FnDateFormat.cpp
             src/functions/FnDefault.cpp
             src/functions/FnDefined.cpp
@@ -665,10 +666,15 @@ ENDIF (${ICONV_SUPPORT} MATCHES "ON")
 IF (${ICU_SUPPORT} MATCHES "ON")
 	ADD_TEST(Function_icu_format_date_C	ctpp2c ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_icu_format_date.tmpl Function_icu_format_date.ct2)
 	ADD_TEST(Function_icu_format_date_R ctpp2vm Function_icu_format_date.ct2 ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/testdata.json Function_icu_format_date.out)
+	ADD_TEST(Function_date_add_C	ctpp2c ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_date_add.tmpl Function_date_add.ct2)
+	ADD_TEST(Function_date_add_R    ctpp2vm Function_date_add.ct2 ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/testdata.json Function_date_add.out)
 	SET_TESTS_PROPERTIES(Function_icu_format_date_R PROPERTIES DEPENDS Function_icu_format_date_C)
+	SET_TESTS_PROPERTIES(Function_date_add_R        PROPERTIES DEPENDS Function_date_add_C)
 	IF (DIFF_EXECUTABLE)
 		ADD_TEST(Function_icu_format_date_D		${DIFF_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_icu_format_date.out Function_icu_format_date.out)
 		SET_TESTS_PROPERTIES(Function_icu_format_date_D  PROPERTIES DEPENDS Function_icu_format_date_R)
+		ADD_TEST(Function_date_add_D		${DIFF_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_date_add.out Function_date_add.out)
+		SET_TESTS_PROPERTIES(Function_date_add_D  PROPERTIES DEPENDS Function_date_add_R)
 	ENDIF (DIFF_EXECUTABLE)
 ENDIF (${ICU_SUPPORT} MATCHES "ON")
 
