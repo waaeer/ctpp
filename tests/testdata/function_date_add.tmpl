@@ -20,4 +20,5 @@ Date: <TMPL_var icu_format_date("dd-MM-yyyy", date_add("2017-04-11","20days"))>
 
 Time: <TMPL_var icu_format_date("dd-MM-yyyy hh:mm:ss", date_add("2017-04-11 12:23:34","20days"))>
 
-// End.
+<TMPL_if (date_add("2017-04-11","20days") lt '2017-05-11')>Less than<TMPL_else><TMPL_var date_add("2017-04-11","20days")>greater!</TMPL_if>
+// End :)
