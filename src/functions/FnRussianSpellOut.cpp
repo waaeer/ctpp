@@ -88,11 +88,12 @@ INT_32 FnRussianSpellOut::Handler(CTPP::CDT          * aArguments,
 //		std::cerr << "i="<<i<<" x="<<x<<std::endl;
 		if(x) { 
 			triad (buffer + strlen(buffer), x, genders[i]); 
-			strcat(buffer, " ");
 		}
-		if(x || i==0) { 
-			strcat(buffer, numeral_case(x, triad_names[i]));
-			if(i>1) strcat(buffer, " "); 
+		if(x || i==0) { 			
+			const char *triad_name = numeral_case(x, triad_names[i]);
+			if(strlen(triad_name)>0) strcat(buffer, " ");
+			strcat(buffer, triad_name);
+			if(i>0) strcat(buffer, " "); 
 		}
 		accum += x * base[i];
 	}
