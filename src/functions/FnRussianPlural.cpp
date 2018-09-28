@@ -9,7 +9,7 @@ namespace CTPP
 {
 
 #include "CDT.hpp"
-
+#include<stdio.h>
 
 FnRussianPlural::FnRussianPlural() 
 { 
@@ -31,11 +31,16 @@ INT_32 FnRussianPlural::Handler(CTPP::CDT          * aArguments,
 
 	const char *variants[3];
 	const char * result;
-	variants[0] = aArguments[2].GetString().c_str();
-	variants[1] = aArguments[1].GetString().c_str();
-	variants[2] = aArguments[0].GetString().c_str();
-	result = CTPP::FnRussianSpellOut::numeral_case(aArguments[3].GetInt(), variants);
-	oCDTRetVal = result;
+	variants[2] = strdup(aArguments[0].GetString().c_str());
+	variants[1] = strdup(aArguments[1].GetString().c_str());
+	variants[0] = strdup(aArguments[2].GetString().c_str());
+
+	long n = aArguments[3].GetInt();
+	result = CTPP::FnRussianSpellOut::numeral_case(n, variants);
+	oCDTRetVal = strdup(result);
+	free((void*)variants[0]); 
+	free((void*)variants[1]);
+	free((void*)variants[2]);
 	return 0;
 }
 

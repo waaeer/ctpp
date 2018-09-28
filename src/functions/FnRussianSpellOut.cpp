@@ -69,7 +69,7 @@ INT_32 FnRussianSpellOut::Handler(CTPP::CDT          * aArguments,
 		
 	double value = atof(aArguments[0].GetString().c_str()); // toDo: arbitrary length numbers
 	static const char* triad_names[4][3] = {
-		{ "рубль", "рубля", "рублей"},
+		{ "", "", ""},
 		{ "тысяча","тысячи", "тысяч"},
 		{ "миллион", "миллиона", "миллионов"},
 		{ "миллиард", "миллиарда", "миллиардов"},
