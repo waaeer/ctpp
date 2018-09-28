@@ -1,3 +1,8 @@
+ctpp2 (2.8.5) unstable; urgency=low
+  * Multiple fixes
+
+ -- Ivan Panchenko <wao@mail.ru> Fri, 28 Sep 2018 0:12:00 +0300
+
 ctpp2 (2.8.4) unstable; urgency=low
   * Added ATTR_IN_ARRAY(), ICU_FORMAT_DATE(), REPLACE(), RUSSIAN_PLURAL(), 
     RUSSIAN_SPELLOUT()
