@@ -92,7 +92,7 @@ INT_32 FnRussianSpellOut::Handler(CTPP::CDT          * aArguments,
 		}
 		if(x || i==0) { 
 			strcat(buffer, numeral_case(x, triad_names[i]));
-			if(i>0) strcat(buffer, " "); 
+			if(i>1) strcat(buffer, " "); 
 		}
 		accum += x * base[i];
 	}
