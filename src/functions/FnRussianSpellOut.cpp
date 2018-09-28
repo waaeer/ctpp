@@ -87,13 +87,13 @@ INT_32 FnRussianSpellOut::Handler(CTPP::CDT          * aArguments,
 		unsigned long x = (unsigned long) ((value - accum) / base[i]) 	;
 //		std::cerr << "i="<<i<<" x="<<x<<std::endl;
 		if(x) { 
+			if(strlen(buffer)>0) strcat(buffer, " ");  
 			triad (buffer + strlen(buffer), x, genders[i]); 
 		}
 		if(x || i==0) { 			
 			const char *triad_name = numeral_case(x, triad_names[i]);
 			if(strlen(triad_name)>0) strcat(buffer, " ");
 			strcat(buffer, triad_name);
-			if(i>0) strcat(buffer, " "); 
 		}
 		accum += x * base[i];
 	}
