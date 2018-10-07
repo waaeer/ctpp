@@ -147,7 +147,7 @@ STLW::string URLEscape(const STLW::string  & sData)
 		{
 			sBuffer[iBufferPointer++] = *itsData;
 		}
-		else if (chTMP == ' ') { sBuffer[iBufferPointer++] = '+'; }
+//		else if (chTMP == ' ') { sBuffer[iBufferPointer++] = '+'; }
 		else
 		{
 			if (iBufferPointer >= (CTPP_ESCAPE_BUFFER_LEN - 3))
