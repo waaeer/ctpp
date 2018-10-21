@@ -27,6 +27,9 @@ DEFAULT:                     Default value
 DEFINED(nonexistent):        0
 DEFINED             :        1
 
+ENGLISH_SPELLOUT:			 one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine
+							 five million
+
 FORM_PARAM:                  <input type="hidden" name="param" value="Hello, World!" />
 
 GET_TYPE:                    INTEGER
@@ -36,7 +39,7 @@ GET_TYPE:                    ARRAY
 
 HASH_KEYS:                    one three two |  one three two
 
-HREF_PARAM:                  hello=%3Cb%3Etest%3C/b%3E+%22test%22+%24test%24&amp;
+HREF_PARAM:                  hello=%3Cb%3Etest%3C/b%3E%20%22test%22%20%24test%24&amp;
 
 IN_ARRAY:                    1
 
@@ -93,7 +96,7 @@ JSON:                        "\u003cb\u003etest\u003c\/b\u003e \"test\" $test$"
 
 JSONESCAPE:                  <b>test<\/b> \"test\" $test$
 
-URLESCAPE:                   %3Cb%3Etest%3C/b%3E+%22test%22+%24test%24
+URLESCAPE:                   %3Cb%3Etest%3C/b%3E%20%22test%22%20%24test%24
 
 URIESCAPE:                   %3Cb%3Etest%3C/b%3E%20%22test%22%20%24test%24
 

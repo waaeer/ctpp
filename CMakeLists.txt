@@ -446,6 +446,7 @@ SET(LIBSRCS
             src/functions/FnDefault.cpp
             src/functions/FnDefined.cpp
             src/functions/FnEmitter.cpp
+            src/functions/FnEnglishSpellOut.cpp
             src/functions/FnError.cpp
             src/functions/FnFormParam.cpp
             src/functions/FnGetText.cpp

@@ -119,6 +119,7 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 	else if (strcasecmp("date_format",                            szHandler) == 0) { return new FnDateFormat();   }
 	else if (strcasecmp("default",                                szHandler) == 0) { return new FnDefault();      }
 	else if (strcasecmp("defined",                                szHandler) == 0) { return new FnDefined();      }
+	else if (strcasecmp("english_spellout", 			          szHandler) == 0) { return new FnEnglishSpellOut();}
 	else if (strcasecmp("error",                                  szHandler) == 0) { return new FnError();        }
 	else if (strcasecmp("form_param",                             szHandler) == 0) { return new FnFormParam();    }
 	else if (strcasecmp("_",                                      szHandler) == 0) { return new FnGetText("_");   }
@@ -199,6 +200,7 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 	"date_format",
 	"default",
 	"defined",
+	"english_spellout",
 	"error",
 	"form_param",
 	"_",
