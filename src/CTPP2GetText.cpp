@@ -501,6 +501,7 @@ UCHAR_P CTPP2GetText::ReadFile(CCHAR_P szFileName, UINT_32 &iLength)
     if (::fstat(fileno(pFile), &st) == -1)
 	{
 		STLW::string sMsg = STLW::string(szFileName) + ": fstat failed";
+		::fclose(pFile);
         throw CTPPGetTextError(sMsg.c_str());
     }
 
@@ -511,10 +512,12 @@ UCHAR_P CTPP2GetText::ReadFile(CCHAR_P szFileName, UINT_32 &iLength)
     if (::fread(reinterpret_cast<void *>(pData.Get()), st.st_size, 1, pFile) < 1)
 	{
 		STLW::string sMsg = STLW::string(szFileName) + ": fread failed";
+		::fclose(pFile);
         throw CTPPGetTextError(sMsg.c_str());
     }
 
 	iLength = st.st_size;
+	::fclose(pFile);
     return pData.Release();
 }
 
