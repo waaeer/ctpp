@@ -13,7 +13,7 @@ SET(CTPP_VERSION         "${CTPP_VERSION_MAJOR}.${CTPP_VERSION_MINOR}.${CTPP_VER
 SET(CTPP_IDENT           "Foo")
 SET(CTPP_MASTER_SITE_URL "http://ctpp.havoc.ru/")
 
-SET(CMAKE_INSTALL_PREFIX "/usr")
+#SET(CMAKE_INSTALL_PREFIX "/usr")
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0 FATAL_ERROR)
 
 OPTION(DEBUG_MODE          "Enable debug output [default: OFF]"                 OFF)
