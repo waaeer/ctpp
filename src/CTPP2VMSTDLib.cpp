@@ -160,6 +160,7 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 	else if (strcasecmp("sprintf",                                szHandler) == 0) { return new FnSprintf();      }
 	else if (strcasecmp("substr",                                 szHandler) == 0) { return new FnSubstring();    }
 	else if (strcasecmp("replace",                                szHandler) == 0) { return new FnReplace();   	  }
+	else if (strcasecmp("time",                                   szHandler) == 0) { return new FnTime();         }
 	else if (strcasecmp("truncate",                               szHandler) == 0) { return new FnTruncate();     }
 	else if (strcasecmp("uriescape",                              szHandler) == 0) { return new FnURIEscape();    }
 	else if (strcasecmp("urlescape",                              szHandler) == 0) { return new FnURLEscape();    }
@@ -167,8 +168,8 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 	else if (strcasecmp("wmlescape",                              szHandler) == 0) { return new FnWMLEscape();    }
 	else if (strcasecmp("xmlescape",                              szHandler) == 0) { return new FnXMLEscape();    }
 #ifdef ICU_SUPPORT
-        else if (strcasecmp("icu_format_date", 			      szHandler) == 0) { return new FnICUFormatDate();}
-        else if (strcasecmp("date_add", 			      	  szHandler) == 0) { return new FnDateAdd();}
+        else if (strcasecmp("icu_format_date", 			      szHandler) == 0) { return new FnICUFormatDate();    }
+        else if (strcasecmp("date_add", 			      	  szHandler) == 0) { return new FnDateAdd();          }
 #endif
 #ifdef  PCRE_SUPPORT
 //	else if (strcasecmp("re_m",                                   szHandler) == 0) { return new FnReM();          }
@@ -247,6 +248,7 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 	"size",
 	"sprintf",
 	"substr",
+	"time",
 	"truncate",
 	"uriescape",
 	"urlescape",

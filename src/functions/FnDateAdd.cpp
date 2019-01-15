@@ -39,21 +39,21 @@ INT_32 FnDateAdd::Handler(CTPP::CDT          * aArguments,
 // does not work in gc < 4.9 
 //			isodate = std::regex_replace (isodate,std::regex("\\.\\d+"),std::string(""));
 // so do it manually 
- 			size_t dot_pos = isodate.find('.');
-			if( dot_pos != std::string::npos) { //found
-				size_t last_digit;
-				for( last_digit = dot_pos+1; last_digit < isodate.length(); last_digit++) { 
-					if(!isdigit(isodate[last_digit])) break;
-				}
-				isodate = isodate.substr(0,dot_pos) +  isodate.substr(last_digit);
-			}
+	size_t dot_pos = isodate.find('.');
+	if( dot_pos != std::string::npos) { //found
+		size_t last_digit;
+		for( last_digit = dot_pos+1; last_digit < isodate.length(); last_digit++) { 
+			if(!isdigit(isodate[last_digit])) break;
+		}
+		isodate = isodate.substr(0,dot_pos) +  isodate.substr(last_digit);
+	}
 //
-			ParsePosition pp(0);
-			date = tparser->parse(UnicodeString(isodate.c_str()), pp);
-			if(!date) { 
-				pp=0;
-				date = dparser->parse(UnicodeString(isodate.c_str()), pp);
-			}
+	ParsePosition pp(0);
+	date = tparser->parse(UnicodeString(isodate.c_str()), pp);
+	if(!date) { 
+		pp=0;
+		date = dparser->parse(UnicodeString(isodate.c_str()), pp);
+	}
 	
 // parse the delta
 	const char* delta = aArguments[0].GetString().c_str();

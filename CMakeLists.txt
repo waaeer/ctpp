@@ -441,7 +441,7 @@ SET(LIBSRCS
             src/functions/FnCast.cpp
             src/functions/FnConcat.cpp
             src/functions/FnContext.cpp
-		src/functions/FnDateAdd.cpp
+            src/functions/FnDateAdd.cpp
             src/functions/FnDateFormat.cpp
             src/functions/FnDefault.cpp
             src/functions/FnDefined.cpp
@@ -457,7 +457,7 @@ SET(LIBSRCS
             src/functions/FnHrefParam.cpp
             src/functions/FnHostname.cpp
             src/functions/FnIconv.cpp
-	    src/functions/FnICUFormatDate.cpp
+            src/functions/FnICUFormatDate.cpp
             src/functions/FnInSet.cpp
             src/functions/FnInArray.cpp
             src/functions/FnJSONEscape.cpp
@@ -481,6 +481,7 @@ SET(LIBSRCS
             src/functions/FnSize.cpp
             src/functions/FnSprintf.cpp
             src/functions/FnSubstring.cpp
+            src/functions/FnTime.cpp
             src/functions/FnTruncate.cpp
             src/functions/FnURIEscape.cpp
             src/functions/FnURLEscape.cpp
@@ -678,6 +679,15 @@ IF (${ICU_SUPPORT} MATCHES "ON")
 		SET_TESTS_PROPERTIES(Function_date_add_D  PROPERTIES DEPENDS Function_date_add_R)
 	ENDIF (DIFF_EXECUTABLE)
 ENDIF (${ICU_SUPPORT} MATCHES "ON")
+
+ADD_TEST(Function_time_C	ctpp2c ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_time.tmpl Function_time.ct2)
+ADD_TEST(Function_time_R    ctpp2vm Function_time.ct2 ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/testdata.json Function_time.out)
+SET_TESTS_PROPERTIES(Function_time_R PROPERTIES DEPENDS Function_time_C)
+IF (DIFF_EXECUTABLE)
+    ADD_TEST(Function_time_D             ${DIFF_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_time.out Function_time.out)
+    SET_TESTS_PROPERTIES(Function_time_D PROPERTIES DEPENDS Function_time_R)
+ENDIF (DIFF_EXECUTABLE)
+
 
 
 ADD_TEST(Function_gettext_C             ctpp2c ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata/function_gettext.tmpl Function_gettext.ct2)

@@ -107,6 +107,7 @@
 #include "FnSize.hpp"
 #include "FnSprintf.hpp"
 #include "FnSubstring.hpp"
+#include "FnTime.hpp"
 #include "FnTruncate.hpp"
 #include "FnURIEscape.hpp"
 #include "FnURLEscape.hpp"
