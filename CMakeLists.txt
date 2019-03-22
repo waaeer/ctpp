@@ -483,6 +483,7 @@ SET(LIBSRCS
             src/functions/FnSubstring.cpp
             src/functions/FnTime.cpp
             src/functions/FnTruncate.cpp
+			src/functions/FnUCFirst.cpp
             src/functions/FnURIEscape.cpp
             src/functions/FnURLEscape.cpp
             src/functions/FnVersion.cpp

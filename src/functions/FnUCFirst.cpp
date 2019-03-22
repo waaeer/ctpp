@@ -25,13 +25,16 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *      FnVersion.cpp
+ *      FnUCFirst.cpp
  *
  * $CTPP$
  */
 
 #include "CDT.hpp"
-#include "FnVersion.hpp"
+#include "CTPP2Logger.hpp"
+#include "FnUCFirst.hpp"
+#include<iostream>
+
 
 namespace CTPP // C++ Template Engine
 {
@@ -39,39 +42,48 @@ namespace CTPP // C++ Template Engine
 //
 // Constructor
 //
-FnVersion::FnVersion() { ;; }
+FnUCFirst::FnUCFirst()
+{
+	;;
+}
 
 //
 // Handler
 //
-INT_32 FnVersion::Handler(CDT            * aArguments,
-                          const UINT_32    iArgNum,
-                          CDT            & oCDTRetVal,
-                          Logger         & oLogger)
+INT_32 FnUCFirst::Handler(CDT            * aArguments,
+                            const UINT_32    iArgNum,
+                            CDT            & oCDTRetVal,
+                            Logger         & oLogger)
 {
-	if (iArgNum == 1 && strcasecmp("full", aArguments[0].GetString().c_str()) == 0)
+	// Check number of parameters
+	if (iArgNum == 1)
 	{
-		oCDTRetVal = "Engine: CTPP2 engine v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2004 - 2012 CTPP Dev. Team; -2019 WAO\n"
-		             "RuntimeLibrary: CTPP Standard Library v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2007 - 2012 CTPP Dev. Team; -2019 WAO\n"
-		             "License: BSD-like, see " CTPP_MASTER_SITE_URL ";";
+		const STLW::string  s(aArguments[0].GetString());
+#ifdef ICU_SUPPORT
+		UnicodeString us(s.c_str());
+		us = us.replace(0,1,UnicodeString(us,0,1).toUpper());
+		std::string s2;
+		us.toUTF8String<std::string> (s2) ;
+		oCDTRetVal = s2.c_str();
+#else
+		/* not implemented */
+		oCDTRetVal = s;
+#endif
+		return 0;
 	}
-	else
-	{
-		oCDTRetVal = "CTPP2 engine v" CTPP_VERSION " (" CTPP_IDENT "), copyright (c) 2004 - 2012 CTPP Dev. Team; -2019 WAO";
-	}
-
-return 0;
+	oLogger.Emerg("Usage: UCFIRST(string)");
+	return -1;
 }
 
 //
 // Get function name
 //
-CCHAR_P FnVersion::GetName() const { return "version"; }
+CCHAR_P FnUCFirst::GetName() const { return "ucfirst"; }
 
 //
 // A destructor
 //
-FnVersion::~FnVersion() throw() { ;; }
+FnUCFirst::~FnUCFirst() throw() { ;; }
 
 } // namespace CTPP
 // End.

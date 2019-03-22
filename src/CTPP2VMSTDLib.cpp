@@ -162,6 +162,7 @@ SyscallHandler * STDLibInitializer::CreateHandler(CCHAR_P szHandler)
 	else if (strcasecmp("replace",                                szHandler) == 0) { return new FnReplace();   	  }
 	else if (strcasecmp("time",                                   szHandler) == 0) { return new FnTime();         }
 	else if (strcasecmp("truncate",                               szHandler) == 0) { return new FnTruncate();     }
+	else if (strcasecmp("ucfirst",                                szHandler) == 0) { return new FnUCFirst();      }
 	else if (strcasecmp("uriescape",                              szHandler) == 0) { return new FnURIEscape();    }
 	else if (strcasecmp("urlescape",                              szHandler) == 0) { return new FnURLEscape();    }
 	else if (strcasecmp("version",                                szHandler) == 0) { return new FnVersion();      }
@@ -250,6 +251,7 @@ CCHAR_P STDLibInitializer::aSTDFNList[] =
 	"substr",
 	"time",
 	"truncate",
+	"ucfirst",
 	"uriescape",
 	"urlescape",
 	"version",

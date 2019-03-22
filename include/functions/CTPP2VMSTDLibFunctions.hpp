@@ -109,6 +109,7 @@
 #include "FnSubstring.hpp"
 #include "FnTime.hpp"
 #include "FnTruncate.hpp"
+#include "FnUCFirst.hpp"
 #include "FnURIEscape.hpp"
 #include "FnURLEscape.hpp"
 #include "FnVersion.hpp"

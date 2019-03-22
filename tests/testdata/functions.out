@@ -84,9 +84,12 @@ SUBSTR:                      World
 TRUNCATE:                    Hello
 TRUNCATE:                    Hello...
 
-VERSION      :               CTPP2 engine v2.8.5 (Foo), copyright (c) 2004 - 2012 CTPP Dev. Team; -2017 WAO
-VERSION(full):               Engine: CTPP2 engine v2.8.5 (Foo), copyright (c) 2004 - 2012 CTPP Dev. Team; -2017 WAO
-RuntimeLibrary: CTPP Standard Library v2.8.5 (Foo), copyright (c) 2007 - 2012 CTPP Dev. Team; -2017 WAO
+UCFIRST:                     Абв
+UCFIRST:                     Abc
+
+VERSION      :               CTPP2 engine v2.8.5 (Foo), copyright (c) 2004 - 2012 CTPP Dev. Team; -2019 WAO
+VERSION(full):               Engine: CTPP2 engine v2.8.5 (Foo), copyright (c) 2004 - 2012 CTPP Dev. Team; -2019 WAO
+RuntimeLibrary: CTPP Standard Library v2.8.5 (Foo), copyright (c) 2007 - 2012 CTPP Dev. Team; -2019 WAO
 License: BSD-like, see http://ctpp.havoc.ru/;
 
 // Escape
