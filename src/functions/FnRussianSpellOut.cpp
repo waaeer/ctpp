@@ -98,8 +98,11 @@ INT_32 FnRussianSpellOut::Handler(CTPP::CDT          * aArguments,
 		accum += x * base[i];
 	}
 //	std::cerr <<  "buffer="<< buffer<<std::endl;
-	oCDTRetVal = buffer;	
 
+	int buf_len = strlen(buffer);
+	if(buffer[buf_len-1] == ' ') buffer[buf_len] = 0;
+
+	oCDTRetVal = buffer;	
 	return 0;
 }
 
