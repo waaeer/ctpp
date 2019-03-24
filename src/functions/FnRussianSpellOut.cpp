@@ -77,7 +77,7 @@ INT_32 FnRussianSpellOut::Handler(CTPP::CDT          * aArguments,
 	static long base[]    = { 1, 1000, 1000000, 1000000000 };
 	static int  genders[] = { 1, 2, 1, 1 };
 	if(value==0) { 
-		strcat(buffer, "ноль ");
+		strcat(buffer, "ноль");
 		strcat(buffer, triad_names[0][2]);
 		oCDTRetVal = buffer;
 		return 0;

@@ -55,7 +55,7 @@ INT_32 FnEnglishSpellOut::Handler(CTPP::CDT          * aArguments,
 	static const char* triad_names[4] = { "", "thousand", "million", "billion" };
 	static long base[]    = { 1, 1000, 1000000, 1000000000 };
 	if(value==0) { 
-		strcat(buffer, "zero ");
+		strcat(buffer, "zero");
 		oCDTRetVal = buffer;
 		return 0;
 	}
