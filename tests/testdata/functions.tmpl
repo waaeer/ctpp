@@ -27,8 +27,9 @@ DEFAULT:                     <TMPL_var DEFAULT(nonexistent, "Default value")>
 DEFINED(nonexistent):        <TMPL_var DEFINED(nonexistent)>
 DEFINED             :        <TMPL_var DEFINED(array_int)>
 
-ENGLISH_SPELLOUT:			 <TMPL_var ENGLISH_SPELLOUT(123456789)>
-							 <TMPL_var ENGLISH_SPELLOUT(5000000)>
+ENGLISH_SPELLOUT:			 <TMPL_var ENGLISH_SPELLOUT(123456789)>.
+							 <TMPL_var ENGLISH_SPELLOUT(5000000)>.
+							 <TMPL_var ENGLISH_SPELLOUT(0)>.
 
 FORM_PARAM:                  <TMPL_var FORM_PARAM("param", string)>
 
@@ -71,8 +72,9 @@ NUM_FORMAT:                  <TMPL_var NUM_FORMAT(1234567890, ' ')>
 
 REPLACE:					 <TMPL_var REPLACE("Window functions running on windows","dow", "fridge")>
 
-RUSSIAN_SPELLOUT:			 <TMPL_var RUSSIAN_SPELLOUT(123456789)>
-							 <TMPL_var RUSSIAN_SPELLOUT(5000000)>
+RUSSIAN_SPELLOUT:			 <TMPL_var RUSSIAN_SPELLOUT(123456789)>.
+							 <TMPL_var RUSSIAN_SPELLOUT(5000000)>.
+							 <TMPL_var RUSSIAN_SPELLOUT(0)>.
 
 SIZE:                        <TMPL_var SIZE(array_int)>
 SIZE:                        <TMPL_var SIZE(hash)>

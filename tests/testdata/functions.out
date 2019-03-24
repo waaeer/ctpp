@@ -27,8 +27,9 @@ DEFAULT:                     Default value
 DEFINED(nonexistent):        0
 DEFINED             :        1
 
-ENGLISH_SPELLOUT:			 one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine
-							 five million
+ENGLISH_SPELLOUT:			 one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine.
+							 five million.
+							 zero.
 
 FORM_PARAM:                  <input type="hidden" name="param" value="Hello, World!" />
 
@@ -71,8 +72,9 @@ NUM_FORMAT:                  1 234 567 890
 
 REPLACE:					 Winfridge functions running on winfridges
 
-RUSSIAN_SPELLOUT:			 сто двадцать три миллиона четыреста пятьдесят шесть тысяч семьсот восемьдесят девять
-							 пять миллионов
+RUSSIAN_SPELLOUT:			 сто двадцать три миллиона четыреста пятьдесят шесть тысяч семьсот восемьдесят девять.
+							 пять миллионов.
+							 ноль.
 
 SIZE:                        4
 SIZE:                        3
