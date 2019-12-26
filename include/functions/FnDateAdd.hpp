@@ -17,8 +17,8 @@ class FnDateAdd:
 {
 private:
 
-	SimpleDateFormat *tparser;
-	SimpleDateFormat *dparser;
+	icu::SimpleDateFormat *tparser;
+	icu::SimpleDateFormat *dparser;
 
 public:
 	FnDateAdd();

@@ -60,8 +60,8 @@ INT_32 FnUCFirst::Handler(CDT            * aArguments,
 	{
 		const STLW::string  s(aArguments[0].GetString());
 #ifdef ICU_SUPPORT
-		UnicodeString us(s.c_str());
-		us = us.replace(0,1,UnicodeString(us,0,1).toUpper());
+		icu::UnicodeString us(s.c_str());
+		us = us.replace(0,1,icu::UnicodeString(us,0,1).toUpper());
 		std::string s2;
 		us.toUTF8String<std::string> (s2) ;
 		oCDTRetVal = s2.c_str();

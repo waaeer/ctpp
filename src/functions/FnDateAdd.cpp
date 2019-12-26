@@ -14,8 +14,8 @@ FnDateAdd::FnDateAdd()
 { 
     UErrorCode err = U_ZERO_ERROR;
 //	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ssZZZZZ")	, err);
-	tparser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'HH:mm:ss")	, err);
-	dparser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd")	, err);
+	tparser = new icu::SimpleDateFormat(icu::UnicodeString("yyyy-MM-dd' 'HH:mm:ss")	, err);
+	dparser = new icu::SimpleDateFormat(icu::UnicodeString("yyyy-MM-dd")	, err);
 }
 
 // Деструктор
@@ -48,11 +48,11 @@ INT_32 FnDateAdd::Handler(CTPP::CDT          * aArguments,
 		isodate = isodate.substr(0,dot_pos) +  isodate.substr(last_digit);
 	}
 //
-	ParsePosition pp(0);
-	date = tparser->parse(UnicodeString(isodate.c_str()), pp);
+	icu::ParsePosition pp(0);
+	date = tparser->parse(icu::UnicodeString(isodate.c_str()), pp);
 	if(!date) { 
 		pp=0;
-		date = dparser->parse(UnicodeString(isodate.c_str()), pp);
+		date = dparser->parse(icu::UnicodeString(isodate.c_str()), pp);
 	}
 	
 // parse the delta
@@ -80,13 +80,13 @@ INT_32 FnDateAdd::Handler(CTPP::CDT          * aArguments,
 // now perform the arithmetics
 
 	UErrorCode err = U_ZERO_ERROR;	
-	GregorianCalendar gc(err);
+	icu::GregorianCalendar gc(err);
 	gc.setTime(date, err);
 	gc.add(field, n, err);
     
-	UnicodeString ret;
+	icu::UnicodeString ret;
 	std::string s;
-	FieldPosition fpos;
+	icu::FieldPosition fpos;
 	tparser->format(gc,ret, fpos).toUTF8String<std::string> (s) ;
 	oCDTRetVal = s.c_str();
 	return 0;

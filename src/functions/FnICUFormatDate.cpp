@@ -1,6 +1,7 @@
 #include "CTPP2SysHeaders.h"
 #ifdef ICU_SUPPORT
 #include <FnICUFormatDate.hpp>
+#include "CTPP2Logger.hpp"
 #include <iostream>
 #include <regex> 
 #include <time.h>
@@ -13,8 +14,8 @@ FnICUFormatDate::FnICUFormatDate()
 { 
     UErrorCode err = U_ZERO_ERROR;
 //	parser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'hh:mm:ssZZZZZ")	, err);
-	tparser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd' 'HH:mm:ss")	, err);
-	dparser = new SimpleDateFormat(UnicodeString("yyyy-MM-dd")	, err);
+	tparser = new icu::SimpleDateFormat(icu::UnicodeString("yyyy-MM-dd' 'HH:mm:ss")	, err);
+	dparser = new icu::SimpleDateFormat(icu::UnicodeString("yyyy-MM-dd")	, err);
 }
 
 // Деструктор
@@ -34,7 +35,7 @@ INT_32 FnICUFormatDate::Handler(CTPP::CDT          * aArguments,
 	// Наша функция принимает один или два агрумента
 	if (iArgNum != 2 && iArgNum !=1 && iArgNum !=4 ) { return -1; }
 	int iFormat;       // номер аргумента с форматной строкой (в CTPP аргументы считаются сзади)
-	Locale * locale = NULL;
+	icu::Locale * locale = NULL;
 	if( iArgNum==1) {  // один аргумент - берем текущее время
 		iFormat = 0;
 		date = 1000* (double)time(NULL);
@@ -42,7 +43,7 @@ INT_32 FnICUFormatDate::Handler(CTPP::CDT          * aArguments,
 		iFormat  = iArgNum-1;
 		int iVal = iArgNum-2;
 		if (iArgNum==4) { 
-			locale = new Locale(aArguments[1].GetString().c_str(), aArguments[0].GetString().c_str());
+			locale = new icu::Locale(aArguments[1].GetString().c_str(), aArguments[0].GetString().c_str());
 		}
 		if(int v = aArguments[iVal].GetInt()) {
 			date = v * 1000;
@@ -60,26 +61,29 @@ INT_32 FnICUFormatDate::Handler(CTPP::CDT          * aArguments,
 				isodate = isodate.substr(0,dot_pos) +  isodate.substr(last_digit);
 			}
 //
-			ParsePosition pp(0);
-			date = tparser->parse(UnicodeString(isodate.c_str()), pp);
+			icu::ParsePosition pp(0);
+			date = tparser->parse(icu::UnicodeString(isodate.c_str()), pp);
 			if(!date) { 
 				pp=0;
-				date = dparser->parse(UnicodeString(isodate.c_str()), pp);
+				date = dparser->parse(icu::UnicodeString(isodate.c_str()), pp);
 			}
 		}
+	} else { 
+		logger.Emerg("Usage: ICUFormatDate(format_str, isodate[, language, country])");
+		return -1; 
 	}
 
 	UErrorCode err = U_ZERO_ERROR;	
 	if(locale) { 
-		SimpleDateFormat formatter(UnicodeString(aArguments[iFormat].GetString().c_str())	, *locale, err);
-		UnicodeString myus;
+		icu::SimpleDateFormat formatter(icu::UnicodeString(aArguments[iFormat].GetString().c_str())	, *locale, err);
+		icu::UnicodeString myus;
 		std::string s;
 		formatter.format (date, myus).toUTF8String<std::string> (s) ;
 		oCDTRetVal = s.c_str();
 		delete locale;
 	} else { 
-		SimpleDateFormat formatter(UnicodeString(aArguments[iFormat].GetString().c_str())	, err);
-		UnicodeString myus;
+		icu::SimpleDateFormat formatter(icu::UnicodeString(aArguments[iFormat].GetString().c_str())	, err);
+		icu::UnicodeString myus;
 		std::string s;
 		formatter.format (date, myus).toUTF8String<std::string> (s) ;
 		oCDTRetVal = s.c_str();

@@ -59,11 +59,11 @@ INT_32 FnMBReplace::Handler(CDT            * aArguments,
 	if (iArgNum == 3)
 	{
 
-		const UnicodeString sReplacement(aArguments[0].GetString().c_str());
-		const UnicodeString sSearch     (aArguments[1].GetString().c_str());
-		      UnicodeString sSrc  	    (aArguments[2].GetString().c_str());
+		const icu::UnicodeString sReplacement(aArguments[0].GetString().c_str());
+		const icu::UnicodeString sSearch     (aArguments[1].GetString().c_str());
+		      icu::UnicodeString sSrc  	    (aArguments[2].GetString().c_str());
 	
-		UnicodeString res = 
+		icu::UnicodeString res = 
 			sSrc.findAndReplace(  0, sSrc.length(), 
 					sSearch,      0, sSearch.length(),
 					sReplacement, 0, sReplacement.length()
