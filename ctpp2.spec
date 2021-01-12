@@ -1,6 +1,6 @@
 Summary: 	CTPP2 template engine.
 Name: 		ctpp2
-Version: 	2.8.3
+Version: 	2.8.5
 Release: 	0%{?dist}
 License: 	BSD
 Source: 	ctpp2-%{version}.tar.gz
@@ -63,6 +63,15 @@ rm -rf %{buildroot}
 %{_libdir}/libctpp2-st.a
 
 %changelog
+* Fri Sep 28 2018 Ivan Panchenko <wao@mail.ru> - 2.8.5-0
+! Multiple fixes
+
+* Sat Dec 16 2017 Ivan Panchenko <wao@mail.ru> - 2.8.4-0
++ Added ATTR_IN_ARRAY(), ICU_FORMAT_DATE(), REPLACE(), RUSSIAN_PLURAL(), RUSSIAN_SPELLOUT()
+! Fixed escaping utf-8 strings
++ Made possible removing trailing newline in comment tag: </TMPL_comment->
+! Loop first/last bug fix
+
 * Sat Nov 10 2012 Alexander Pankov <pianist@usrsrc.ru> - 2.8.3-0
 + Returned curly brakets as an alias for square
 + Fixed error reporting
@@ -113,7 +122,7 @@ rm -rf %{buildroot}
 * Fri Apr  1 2011 Andrei V. Shetuhin <reki@reki.ru> - 2.6.13-0
 - Bug fixes
 
-* Tue Mar 11 2011 Andrei V. Shetuhin <reki@reki.ru> - 2.6.12-0
+* Fri Mar 11 2011 Andrei V. Shetuhin <reki@reki.ru> - 2.6.12-0
 - Bug fixes
 
 * Mon Feb 28 2011 Andrei V. Shetuhin <reki@reki.ru> - 2.6.11-0
@@ -137,7 +146,7 @@ rm -rf %{buildroot}
 * Tue Jul 27 2010 Andrei V. Shetuhin <reki@reki.ru> - 2.6.3-0
 - Fixes in TMPL_foreach iterators (thanks to Kirichenko Sergey <kirichenko@post.km.ru>)
 
-* Wed Jul 20 2010 Andrei V. Shetuhin <reki@reki.ru> - 2.6.2-0
+* Tue Jul 20 2010 Andrei V. Shetuhin <reki@reki.ru> - 2.6.2-0
 - New methods for CDT class: Swap & SortArray.
 
 * Wed Jun 16 2010 Andrei V. Shetuhin <reki@reki.ru> - 2.6.1-0
@@ -182,7 +191,7 @@ rm -rf %{buildroot}
 * Tue Jun  2 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.5.5-0
 - Fixes in math. expressions inside functions: <TMPL_var FOO(bar + baz)>
 
-* Tue May 20 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.5.4-0
+* Wed May 20 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.5.4-0
 - Avoid a lot of warnings on gcc 4.3+, #include <...> changed to #include "..." for all files of project
 
 * Tue May 12 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.5.3-0
@@ -200,10 +209,10 @@ rm -rf %{buildroot}
 * Wed Apr  8 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.10-0
 - New function: WMLESCAPE
 
-* Tue Apr  2 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.9-0
+* Thu Apr  2 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.9-0
 - New classes: SimpleVM, SimpleCompiler
 
-* Tue Mar 18 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.8-0
+* Wed Mar 18 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.8-0
 - New functions: CONCAT, SUBSTR, TRUNCATE, MB_SIZE, MB_TRUNCATE, MB_SUBSTR
 
 * Mon Mar 16 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.7-0
@@ -215,7 +224,7 @@ rm -rf %{buildroot}
 * Wed Mar  4 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.5-0
 - Port to MacOS, new functions: RANDOM and LOG
 
-* Sat Feb 15 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.4-0
+* Sun Feb 15 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.4-0
 - New functions: HMAC_MD5, URIESCAPE
 
 * Tue Feb 10 2009 Andrei V. Shetuhin <reki@reki.ru> - 2.4.3-0
@@ -254,7 +263,7 @@ rm -rf %{buildroot}
 * Fri Jul 11 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.3.4-0
 - Debian Lenny bug fixes
 
-* Wed Jun 24 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.3.3-0
+* Tue Jun 24 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.3.3-0
 - Debug subsystem improvements
 
 * Wed Jun 18 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.3.2-0
@@ -278,7 +287,7 @@ rm -rf %{buildroot}
 * Fri Apr 18 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.2.0-0
 - Bug fixes, support of crossplatform bytecode file
 
-* Fri Mar 29 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.1.2-0
+* Sat Mar 29 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.1.2-0
 - Inverse translation map in <TMPL_include ...
 
 * Wed Mar 19 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.1.1-0
@@ -302,5 +311,5 @@ rm -rf %{buildroot}
 * Mon Feb  4 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.0.1-0
 - Bug fixes
 
-* Fri Jan 26 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.0.0-0
+* Sat Jan 26 2008 Andrei V. Shetuhin <reki@reki.ru> - 2.0.0-0
 - First version 2.X release.

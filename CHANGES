@@ -1,4 +1,4 @@
- CTPP version 2.8.3 change log
+ CTPP version 2.8.5 change log
  -----------------------------
 
  Legend
@@ -9,6 +9,17 @@
    ! = Bug fixed
    = = Unresolved
    # = Other stuff
+
+ Version 2.8.4 (28.09.2018)
+ --------------------------
+  01. ! Multiple fixes
+
+ Version 2.8.4 (16.12.2017)
+ --------------------------
+  01. + Added ATTR_IN_ARRAY(), ICU_FORMAT_DATE(), REPLACE(), RUSSIAN_PLURAL(), RUSSIAN_SPELLOUT()
+  02. ! Fixed escaping utf-8 strings
+  03. * Made possible removing trailing newline in comment tag: </TMPL_comment->
+  04. ! Loop first/last bug fix
 
  Version 2.8.3 (10.11.2012)
  --------------------------
