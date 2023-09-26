@@ -270,7 +270,7 @@ IF (${ICU_SUPPORT} MATCHES "ON")
     IF (ICU_INCLUDE)
         INCLUDE_DIRECTORIES(${ICU_INCLUDE})
 
-	FIND_LIBRARY(ICUI18N_LIBRARY NAMES icui18n PATHS /opt/lib /usr/local/lib /usr/lib /lib
+	FIND_LIBRARY(ICUI18N_LIBRARY NAMES icui18n PATHS /opt/lib /usr/local/lib /usr/lib/x86_64-linux-gnu /usr/lib /lib
 		DOC "Path where the icu libraries can be found")
 	IF (ICUI18N_LIBRARY)
 		SET(PROJECT_LIBS "${PROJECT_LIBS} icui18n")
