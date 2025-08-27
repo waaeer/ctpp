@@ -348,7 +348,11 @@ INCLUDE_DIRECTORIES(include/functions)
 
 IF("${CMAKE_COMPILER_IS_GNUCXX}" MATCHES "1")
 
-    SET(CXX_FLAGS       " ${CXX_FLAGS} --std=gnu++0x ")
+   IF("${CMAKE_CXX_COMPILER_VERSION}" VERSION_GREATER_EQUAL 14) 
+       SET(CXX_FLAGS       " ${CXX_FLAGS} --std=gnu++17 ")
+    ELSE()
+       SET(CXX_FLAGS       " ${CXX_FLAGS} --std=gnu++0x ") 
+    ENDIF()
  
     SET(CMAKE_CXX_PARAMS      " --param large-function-growth=5000 --param inline-unit-growth=600 -finline-limit=2000 ")
 
